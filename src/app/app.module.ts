@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { Footer } from './footer/footer.component';
 import { Teachers } from './teachers/teachers.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TeacherCardComponent } from './teacher-card/teacher-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Footer,
-    Teachers
+    Teachers,
+    TeacherCardComponent
   ],
   imports: [
     BrowserModule,

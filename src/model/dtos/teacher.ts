@@ -5,5 +5,7 @@ export interface Teacher{
     bio: string,
     begunTeaching: string,
     nickname: string,
-    professionalExperience: string
+    professionalExperience: string,
+    imgName: string,
+    teacherLevel: string
 }
