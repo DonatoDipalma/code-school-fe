@@ -1,0 +1,109 @@
+
+<body>
+<h1 class="hover-effect">Edizioni disponibili entro 6 mesi:</h1>
+
+<div id="form-container">
+    <form action = "#" th:action = "@{/editions/upcoming}" method = "get">
+        <select title = "seleziona un'area" name="area" id="area" class="form-select">
+            <option selected value="">Seleziona un'area</option>
+            <option th:each = "a : ${areas}" th:value="${a.id}" th:text ="${a.name}">area</option>
+        </select>
+    </form>
+</div>
+<div class="container1">
+  <div class="row">
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159407.png" alt="" class="hover-effect">     </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/3771/3771395.png" alt="" class="hover-effect">              </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/2620/2620490.png" alt="" class="hover-effect">              </div>
+  </div>
+</div>
+<div class="container">
+    <article class="tech" th:each = "e : ${upcomingEditions}">
+        <div class="img-tech">
+            
+            <img src="https://cdn-icons-png.flaticon.com/512/2705/2705224.png" alt="" class="hover-effect">
+            <p id="ptech" class="hover-effect">TECH</p>
+            <hr>
+      
+        <p th:text = "${e.id}"><i class="bi bi-hash"></i><br>ID</p>
+        <p th:text = "${e.course.title}"><i class="bi bi-pencil-square"></i><br>TITOLO</p>
+        <p th:text = "${e.startDate}"><i class="bi bi-calendar-event"></i><br> DATA INIZIO</p>
+        <p th:text = "${e.finishDate}">DATA FINE</p>
+        <p th:text = "${e.tutor}"><i class="bi bi-person"></i><br>TUTOR</p>
+        <p th:text = "${e.pay}"><i class="bi bi-currency-euro"></i><br>PREZZO</p>
+        </div>
+    </article>
+    <article class="design" th:each="e : ${upcomingEditions}">
+        <div class="img-design">
+            <img src="https://cdn-icons-png.flaticon.com/512/2219/2219592.png" alt="" class="hover-effect">
+            <p id="pdesign" class="hover-effect">DESIGN</p>
+            <hr>
+            <p th:text = "${e.id}"><i class="bi bi-hash"></i><br>ID</p>
+        <p th:text = "${e.course.title}"><i class="bi bi-pencil-square"></i><br>TITOLO</p>
+        <p th:text = "${e.startDate}"><i class="bi bi-calendar-event"></i><br> DATA INIZIO</p>
+        <p th:text = "${e.finishDate}">DATA FINE</p>
+        <p th:text = "${e.tutor}"><i class="bi bi-person"></i><br>TUTOR</p>
+        <p th:text = "${e.pay}"><i class="bi bi-currency-euro"></i><br>PREZZO</p>
+        </div>
+    </article>
+    <article class="office" th:each="e : ${upcomingEditions}">
+        <div class="img-office">
+            <img src="https://cdn-icons-png.flaticon.com/512/3374/3374170.png" alt="" class="hover-effect">
+            <p id="poffice" class="hover-effect">OFFICE</p>
+            <hr>
+            <p th:text = "${e.id}"><i class="bi bi-hash"></i><br>ID</p>
+        <p th:text = "${e.course.title}"><i class="bi bi-pencil-square"></i><br>TITOLO</p>
+        <p th:text = "${e.startDate}"><i class="bi bi-calendar-event"></i><br> DATA INIZIO</p>
+        <p th:text = "${e.finishDate}">DATA FINE</p>
+        <p th:text = "${e.tutor}"><i class="bi bi-person"></i><br>TUTOR</p>
+        <p th:text = "${e.pay}"><i class="bi bi-currency-euro"></i><br>PREZZO</p>
+        </div>
+    </article>
+    
+</div>
+<div class="container1">
+  <div class="row">
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/1296/1296693.png" alt="" class="hover-effect">     </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159172.png" alt="" class="hover-effect">              </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/9727/9727439.png" alt="" class="hover-effect">              </div>
+  </div>
+</div>
+
+
+
+
+<!--<table>-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>id</th>-->
+<!--        <th>course name</th>-->
+<!--        <th>start date</th>-->
+<!--        <th>finish date</th>-->
+<!--        <th>tutor</th>-->
+<!--        <th>pay</th>-->
+<!--        <th>dettagli</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each = "e : ${upcomingEditions}">-->
+<!--        <td th:text = "${e.id}">id</td>-->
+<!--        <td th:text = "${e.course.title}">titolo corso</td>-->
+<!--        <td th:text = "${e.startDate}">data inizio</td>-->
+<!--        <td th:text = "${e.finishDate}">data fine</td>-->
+<!--        <td th:text = "${e.tutor}">tutor</td>-->
+<!--        <td th:text = "${e.pay}">prezzo</td>-->
+<!--        <td>-->
+<!--            <a th:href = "@{/editions/detail(editionId = ${e.id})}" th:text = "${'dettagli ' + e.course.title}">dettagli</a>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+
+</body>
+

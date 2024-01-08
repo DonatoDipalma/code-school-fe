@@ -1,0 +1,88 @@
+<body>
+
+<h1 class="hover-effect">Crea un nuovo corso</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/6822/6822288.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/9874/9874671.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/256/1945/1945655.png" alt="" class="hover-effect">
+    </div>
+  </div>
+</div>
+
+<form class="row g-3" (ngSubmit)="onSubmit()" [formGroup]="courseForm">
+  <div class="col-md-6">
+    <label for="title" class="form-label">Titolo</label>
+    <input type="text" id="title" class="form-control" formControlName="title">
+    <span class="error">Campo obbligatorio</span>
+  </div>
+  <div class="col-md-6">
+    <label for="duration" class="form-label">Durata</label>
+    <input type="number" id="duration" class="form-control" formControlName="duration">
+    <span class="error">Campo obbligatorio</span>
+  </div>
+  <div class="col-md-6">
+    <label for="participant" class="form-label">Partecipanti</label>
+    <input type="number" id="participant" class="form-control" formControlName="maxParticipants">
+    <span class="error">Campo obbligatorio</span>
+  </div>
+  <div class="col-6">
+    <label for="area" class="form-label">Area</label>
+    <select class="form-select" id="area" formControlName="areaId">
+      <option *ngFor="let area of areas" [value]="area.id">{{ area.name }}</option>
+    </select>
+  </div>
+  <div class="col-12">
+    <label for="typeC" class="form-label">Tipologia</label>
+    <select id="typeC" class="form-select" formControlName="courseType">
+      <option selected value="">Choose...</option>
+      <option value="HYBRID">HYBRID</option>
+      <option value="REMOTE">REMOTE</option>
+      <option value="IN_PERSON">IN_PERSON</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="typeP" class="form-label">Payment</label>
+    <select id="typeP" class="form-select" formControlName="payment">
+      <option selected value="">Choose...</option>
+      <option value="FREE">FREE</option>
+      <option value="PERSONAL">PERSONAL</option>
+      <option value="COMPANY">COMPANY</option>
+      <option value="FINANCED">FINANCED</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label for="typeS" class="form-label">Skill Level</label>
+    <select id="typeS" class="form-select" formControlName="skillLevel">
+      <option selected value="">Choose...</option>
+      <option value="BASIC">BASIC</option>
+      <option value="INTERMEDIATE">INTERMEDIATE</option>
+      <option value="ADVANCED">ADVANCED</option>
+      <option value="GURU">GURU</option>
+    </select>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">CREA</button>
+  </div>
+</form>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/1640/1640642.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/256/5390/5390225.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/6551/6551750.png" alt="" class="hover-effect">
+    </div>
+  </div>
+</div>
+</body>

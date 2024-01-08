@@ -1,17 +1,17 @@
 <div class="col hover-effect">
-    <h3>{{ teach?.firstname + ' ' + teach?.lastname }}</h3> <!--? (opzinale) per evitare errori-->
-    <h3>{{ teach?.nickname }}</h3>
+    <h1>{{ teach?.firstname + ' ' + teach?.lastname }}</h1> <!--? (opzinale) per evitare errori-->
+    <h6>{{ teach?.nickname }}</h6>
     <img [src]= "'/assets/img/teach_icons/' + teach?.imgName" alt="">
     <section>
-        <h3>Esperienza professioanle</h3>
+        <h5>Esperienza professionale</h5>
         <p>{{ teach?.professionalExperience }}</p>
     </section>
     <section>
-        <h3>Bio</h3>
+        <h5>Bio</h5>
         <p>{{ teach?.bio }}</p>
     </section>
     <section>
-        <h3>Titolo</h3>
-        <p>docente: {{ teach?.teacherLevel }}</p>
+        <h5>Titolo</h5>
+        <p>Developer {{ teach?.teacherLevel }}</p>
     </section>
 </div>

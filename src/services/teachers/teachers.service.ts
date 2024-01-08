@@ -10,9 +10,13 @@ export class TeachersService{
     constructor(private http: HttpClient){
     }
 
-    getTopThreeTeachers(): Observable<Teacher[]>{
-        const params = new HttpParams().set('limit', 3);
-        //return this.http.get<Teacher[]>(URL + "/?limit=3");
-        return this.http.get<Teacher[]>(this.URL, {params});
+    // getTopThreeTeachers(): Observable<Teacher[]>{
+    //     const params = new HttpParams().set('limit', 3);
+    //     //return this.http.get<Teacher[]>(URL + "/?limit=3");
+    //     return this.http.get<Teacher[]>(this.URL, {params});
+    // }
+
+    getTopThreeTeachers(): Observable<Teacher[]> {
+        return this.http.get<Teacher[]>(this.URL);
     }
 }

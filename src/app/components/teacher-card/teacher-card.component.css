@@ -4,16 +4,23 @@
 }
 
 h1 {
-    color: #333;
+    color: white;
     font-size: 32px;
     margin-bottom: 20px;
+}
+
+h6 {
+    color: black;
+    font-weight: 900;
+    font-size: 20px;
+
 }
 
 .col {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    margin: 10px;
+    margin: 24px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
@@ -21,6 +28,13 @@ h1 {
 
 .col:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h5 {
+    color: #EA605B;
+    font-weight: 900;
+    font-size: 22px;
+    margin-bottom: 20px;
 }
 
 h3 {

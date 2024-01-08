@@ -1,0 +1,59 @@
+<body>
+
+  <h1 class="hover-effect">Tutti i corsi disponibili:</h1>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/5278/5278681.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/3352/3352681.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910637.png" alt="" class="hover-effect">
+      </div>
+    </div>
+  </div>
+  
+  <div class="table-container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>TITOLO</th>
+          <th>DURATA</th>
+          <th>TIPOLOGIA</th>
+          <th>EDIZIONE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of allCourses">
+          <td>{{ c.id }}</td>
+          <td>{{ c.title }}</td>
+          <td>{{ c.duration }}</td>
+          <td>{{ c.courseType }}</td>
+          <td>
+            <a>edizioni</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/4696/4696777.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/405/405719.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/2643/2643534.png" alt="" class="hover-effect">
+      </div>
+    </div>
+  </div>
+  
+  <a class="btn btn-primary hover-effect" routerLink="/add-course-form" routerLinkActive="active">Crea nuovo corso</a>
+</body>
