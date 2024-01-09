@@ -14,4 +14,8 @@ export class EditionService {
   getUpcomingEditions(): Observable<Edition[]> {
     return this.http.get<Edition[]>(`${this.URL}/upcoming`);
   }
-}
+
+  getUpcomingEditionsByArea(areaId: Number): Observable<Edition[]> {
+    return this.http.get<Edition[]>(`${this.URL}/upcomingWithArea/${areaId}`);
+  }
+ }

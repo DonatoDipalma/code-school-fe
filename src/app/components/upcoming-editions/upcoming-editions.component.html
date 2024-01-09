@@ -1,9 +1,9 @@
 <h1 class="hover-effect">Edizioni disponibili entro 6 mesi:</h1>
   <div id="form-container">
-    <form action = "#" th:action = "@{/editions/upcoming}" method = "get">
-      <select title = "seleziona un'area" name="area" id="area" class="form-select">
-        <option selected value="">Seleziona un'area</option>
-        <option th:each = "a : ${areas}" th:value="${a.id}" th:text ="${a.name}">area</option>
+    <form action = "#" [formGroup]="areaForm">
+      <select title = "seleziona un'area" (change)="onSubmit()" formControlName="areaIdForm" id="area" class="form-select">
+        <option selected>Seleziona un'area</option>
+        <option *ngFor="let a of areas" [ngValue]="a.id" type="submit">{{a.name}}</option>
       </select>
     </form>
   </div>
