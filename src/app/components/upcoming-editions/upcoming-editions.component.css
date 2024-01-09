@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: whitesmoke;
-    font-family: 'DM Sans', sans-serif;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   margin: 0;
+   padding: 0;
 }
 
 header {
@@ -36,6 +36,7 @@ img.smaller-image {
    text-align: center;
    padding: 20px;
    box-sizing: border-box;
+   margin-bottom: 0;
 }
 
 .nav {
@@ -68,14 +69,13 @@ img {
    padding: 20px;
    margin-bottom: 20px;
 
- }
+}
  
- .row img:hover {
+.row img:hover {
    transform: scale(1.1);
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
    border: 2px solid black;
  }
-
 
 .container {
    display: grid;
@@ -83,8 +83,8 @@ img {
    column-gap: 50px;
    row-gap: 50px;
    margin-bottom: 90px;
+   margin-bottom: 0;
 }
-
 
 #select-container {
    display: flex;
@@ -100,14 +100,17 @@ article {
    border-radius: 12px;
 }
 
-
-
 h1 {
+   background-color: dodgerblue;
+   border-radius: 12px;
+   padding: 5px 50px;
    font-size: 40px;
    margin: auto;
    font-weight: 700;
    color: black;
+   display: table;
 }
+
 .hover-effect {
    transition: transform 0.3s ease;
 }
@@ -122,9 +125,9 @@ article p {
 }
 
 #form-container {
+   margin: auto;
    padding: 10px;
    width: 15em;
-   align-self: center;
 }
 
 article.office {
@@ -147,8 +150,6 @@ article.design {
 .container img:hover {
    transform: scale(1.1);
 }
-
-
 
 .img-tech img {
    width: 150px;

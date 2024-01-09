@@ -87,7 +87,7 @@ h1:hover {
 
 .table-container {
     width: 80%;
-    display: inline-block;
+    margin: 0 auto;
     text-align: left;
 }
 
@@ -116,4 +116,8 @@ th {
     width: 35%;
     font-size: 45px;
     line-height: 80px;
+}
+
+.custom-table {
+    margin: 0 auto;
 }

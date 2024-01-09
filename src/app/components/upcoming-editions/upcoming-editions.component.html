@@ -1,23 +1,21 @@
-
-<body>
 <h1 class="hover-effect">Edizioni disponibili entro 6 mesi:</h1>
-
-<div id="form-container">
+  <div id="form-container">
     <form action = "#" th:action = "@{/editions/upcoming}" method = "get">
-        <select title = "seleziona un'area" name="area" id="area" class="form-select">
-            <option selected value="">Seleziona un'area</option>
-            <option th:each = "a : ${areas}" th:value="${a.id}" th:text ="${a.name}">area</option>
-        </select>
+      <select title = "seleziona un'area" name="area" id="area" class="form-select">
+        <option selected value="">Seleziona un'area</option>
+        <option th:each = "a : ${areas}" th:value="${a.id}" th:text ="${a.name}">area</option>
+      </select>
     </form>
-</div>
-<div class="container1">
+  </div>
+
+<div class="container1" style="margin-top: 15px;">
   <div class="row">
     <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159407.png" alt="" class="hover-effect">     </div>
+      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159407.png" alt="" class="hover-effect"></div>
     <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/3771/3771395.png" alt="" class="hover-effect">              </div>
+      <img src="https://cdn-icons-png.flaticon.com/512/3771/3771395.png" alt="" class="hover-effect"></div>
     <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/2620/2620490.png" alt="" class="hover-effect">              </div>
+      <img src="https://cdn-icons-png.flaticon.com/512/2620/2620490.png" alt="" class="hover-effect"></div>
   </div>
 </div>
 <div class="container">
@@ -61,22 +59,19 @@
         <p th:text = "${e.tutor}"><i class="bi bi-person"></i><br>TUTOR</p>
         <p th:text = "${e.pay}"><i class="bi bi-currency-euro"></i><br>PREZZO</p>
         </div>
-    </article>
-    
+    </article>   
 </div>
-<div class="container1">
+
+<div class="container1" style="margin-top: 15px;">
   <div class="row">
     <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/1296/1296693.png" alt="" class="hover-effect">     </div>
+      <img src="https://cdn-icons-png.flaticon.com/512/1296/1296693.png" alt="" class="hover-effect"></div>
     <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159172.png" alt="" class="hover-effect">              </div>
+      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159172.png" alt="" class="hover-effect"></div>
     <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/9727/9727439.png" alt="" class="hover-effect">              </div>
+      <img src="https://cdn-icons-png.flaticon.com/512/9727/9727439.png" alt="" class="hover-effect"></div>
   </div>
 </div>
-
-
-
 
 <!--<table>-->
 <!--    <thead>-->
@@ -104,6 +99,4 @@
 <!--    </tr>-->
 <!--    </tbody>-->
 <!--</table>-->
-
-</body>
 
