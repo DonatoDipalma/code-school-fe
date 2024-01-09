@@ -19,47 +19,20 @@
   </div>
 </div>
 <div class="container">
-    <article class="tech" th:each = "e : ${upcomingEditions}">
+    <article class="tech" *ngFor = "let ue of upcomingEdition">
         <div class="img-tech">
             
             <img src="https://cdn-icons-png.flaticon.com/512/2705/2705224.png" alt="" class="hover-effect">
             <p id="ptech" class="hover-effect">TECH</p>
             <hr>
       
-        <p th:text = "${e.id}"><i class="bi bi-hash"></i><br>ID</p>
-        <p th:text = "${e.course.title}"><i class="bi bi-pencil-square"></i><br>TITOLO</p>
-        <p th:text = "${e.startDate}"><i class="bi bi-calendar-event"></i><br> DATA INIZIO</p>
-        <p th:text = "${e.finishDate}">DATA FINE</p>
-        <p th:text = "${e.tutor}"><i class="bi bi-person"></i><br>TUTOR</p>
-        <p th:text = "${e.pay}"><i class="bi bi-currency-euro"></i><br>PREZZO</p>
+        <p><i class="bi bi-hash"></i><br>{{ue?.id}}</p>
+        <p><i class="bi bi-calendar-event"></i><br>{{ue?.startDate}}</p>
+        <p><i class="bi bi-calendar-event"></i><br>{{ue?.finishDate}}</p>
+        <p><i class="bi bi-person"></i><br>{{ue?.tutor}}</p>
+        <p><i class="bi bi-currency-euro"></i><br>{{ue?.pay}}</p>
         </div>
     </article>
-    <article class="design" th:each="e : ${upcomingEditions}">
-        <div class="img-design">
-            <img src="https://cdn-icons-png.flaticon.com/512/2219/2219592.png" alt="" class="hover-effect">
-            <p id="pdesign" class="hover-effect">DESIGN</p>
-            <hr>
-            <p th:text = "${e.id}"><i class="bi bi-hash"></i><br>ID</p>
-        <p th:text = "${e.course.title}"><i class="bi bi-pencil-square"></i><br>TITOLO</p>
-        <p th:text = "${e.startDate}"><i class="bi bi-calendar-event"></i><br> DATA INIZIO</p>
-        <p th:text = "${e.finishDate}">DATA FINE</p>
-        <p th:text = "${e.tutor}"><i class="bi bi-person"></i><br>TUTOR</p>
-        <p th:text = "${e.pay}"><i class="bi bi-currency-euro"></i><br>PREZZO</p>
-        </div>
-    </article>
-    <article class="office" th:each="e : ${upcomingEditions}">
-        <div class="img-office">
-            <img src="https://cdn-icons-png.flaticon.com/512/3374/3374170.png" alt="" class="hover-effect">
-            <p id="poffice" class="hover-effect">OFFICE</p>
-            <hr>
-            <p th:text = "${e.id}"><i class="bi bi-hash"></i><br>ID</p>
-        <p th:text = "${e.course.title}"><i class="bi bi-pencil-square"></i><br>TITOLO</p>
-        <p th:text = "${e.startDate}"><i class="bi bi-calendar-event"></i><br> DATA INIZIO</p>
-        <p th:text = "${e.finishDate}">DATA FINE</p>
-        <p th:text = "${e.tutor}"><i class="bi bi-person"></i><br>TUTOR</p>
-        <p th:text = "${e.pay}"><i class="bi bi-currency-euro"></i><br>PREZZO</p>
-        </div>
-    </article>   
 </div>
 
 <div class="container1" style="margin-top: 15px;">
