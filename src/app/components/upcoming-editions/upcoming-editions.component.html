@@ -3,7 +3,7 @@
     <form action = "#" th:action = "@{/editions/upcoming}" method = "get">
       <select title = "seleziona un'area" name="area" id="area" class="form-select">
         <option selected value="">Seleziona un'area</option>
-        <option th:each = "a : ${areas}" th:value="${a.id}" th:text ="${a.name}">area</option>
+        <option *ngFor="let a of areas" >{{a.name}}</option>
       </select>
     </form>
   </div>
@@ -73,30 +73,5 @@
   </div>
 </div>
 
-<!--<table>-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <th>id</th>-->
-<!--        <th>course name</th>-->
-<!--        <th>start date</th>-->
-<!--        <th>finish date</th>-->
-<!--        <th>tutor</th>-->
-<!--        <th>pay</th>-->
-<!--        <th>dettagli</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr th:each = "e : ${upcomingEditions}">-->
-<!--        <td th:text = "${e.id}">id</td>-->
-<!--        <td th:text = "${e.course.title}">titolo corso</td>-->
-<!--        <td th:text = "${e.startDate}">data inizio</td>-->
-<!--        <td th:text = "${e.finishDate}">data fine</td>-->
-<!--        <td th:text = "${e.tutor}">tutor</td>-->
-<!--        <td th:text = "${e.pay}">prezzo</td>-->
-<!--        <td>-->
-<!--            <a th:href = "@{/editions/detail(editionId = ${e.id})}" th:text = "${'dettagli ' + e.course.title}">dettagli</a>-->
-<!--        </td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--</table>-->
+
 
