@@ -1,6 +1,6 @@
 <h1 class="hover-effect">Edizioni disponibili entro 6 mesi:</h1>
   <div id="form-container">
-    <form action = "#" [formGroup]="areaForm">
+    <form [formGroup]="areaForm">
       <select title = "seleziona un'area" (change)="onSubmit()" formControlName="areaIdForm" id="area" class="form-select">
         <option selected>Seleziona un'area</option>
         <option *ngFor="let a of areas" [ngValue]="a.id" type="submit">{{a.name}}</option>
