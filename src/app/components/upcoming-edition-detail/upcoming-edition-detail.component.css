@@ -78,12 +78,19 @@ img {
  }
 
 .container {
-   display: grid;
+   justify-content: center;
+   align-items: center;
    grid-template-columns: repeat(3, 1fr);
    column-gap: 50px;
    row-gap: 50px;
    margin-bottom: 90px;
    margin-bottom: 0;
+}
+
+.goBack {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 #select-container {
@@ -97,6 +104,8 @@ article {
    flex-direction: column;
    border: 2px solid black;
    padding: 30px 15px;
+   margin-left: 500px;
+   margin-right: 500px;
    border-radius: 12px;
 }
 
@@ -135,11 +144,7 @@ article.office {
 }
 
 article.tech {
-   background-color: #E26EE5;
-}
-
-article.tech:hover {
-   transform: scale(1.1);
+   background-color: #6e74e5;
 }
 
 article.design {
@@ -176,7 +181,7 @@ article.design {
    border-radius: 12px;
    text-align: center;
    font-size: 20px;
-   background-color: #9A031E;
+   background-color: #039a24;
 }
 
 #ptech:hover {
@@ -204,7 +209,7 @@ article.design {
    border-radius: 12px;
    text-align: center;
    font-size: 20px;
-   background-color: #E36414;
+   background-color: #71e314;
 }
 
 #poffice:hover {

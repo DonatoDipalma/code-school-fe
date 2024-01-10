@@ -17,6 +17,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AddCourseFormComponent } from './components/add-course-form/add-course-form.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SuccessAddCourseFormComponent } from './components/success-add-course-form/success-add-course-form.component';
+import { UpcomingEditionDetailComponent } from './components/upcoming-edition-detail/upcoming-edition-detail.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SuccessAddCourseFormComponent } from './components/success-add-course-f
     LoginComponent,
     AddCourseFormComponent,
     MenuComponent,
-    SuccessAddCourseFormComponent
+    SuccessAddCourseFormComponent,
+    UpcomingEditionDetailComponent
   ],
   imports: [
     BrowserModule,

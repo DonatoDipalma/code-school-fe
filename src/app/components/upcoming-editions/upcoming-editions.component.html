@@ -19,18 +19,18 @@
   </div>
 </div>
 <div class="container">
-    <article class="tech" *ngFor = "let ue of upcomingEdition">
+    <article class="tech" *ngFor = "let ue of upcomingEdition" type="button" [routerLink]="['detail', ue.id]">
         <div class="img-tech">
-            
             <img src="https://cdn-icons-png.flaticon.com/512/2705/2705224.png" alt="" class="hover-effect">
             <p id="ptech" class="hover-effect">TECH</p>
             <hr>
       
-        <p><i class="bi bi-hash"></i><br>{{ue?.id}}</p>
-        <p><i class="bi bi-calendar-event"></i><br>{{ue?.startDate}}</p>
-        <p><i class="bi bi-calendar-event"></i><br>{{ue?.finishDate}}</p>
-        <p><i class="bi bi-person"></i><br>{{ue?.tutor}}</p>
-        <p><i class="bi bi-currency-euro"></i><br>{{ue?.pay}}</p>
+        <p><i class="bi bi-hash"></i>ID<br>{{ue?.id}}</p>
+        <p><i class="bi bi-calendar-event"></i>Inizio<br>{{ue?.startDate}}</p>
+        <p><i class="bi bi-calendar-event"></i>Fine<br>{{ue?.finishDate}}</p>
+        <p><i class="bi bi-person"></i>Tutor<br>{{ue?.tutor}}</p>
+        <p><i class="bi bi-currency-euro"></i>Pagamento<br>{{ue?.pay}}</p>
+        <p><i>Cliccami per saperne di più!</i></p>
         </div>
     </article>
 </div>
