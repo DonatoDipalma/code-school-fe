@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Edition } from 'src/model/dtos/edition';
-import { AreaService } from '../area/area.service';
-
+import { EditionDetailsDto } from 'src/model/dtos/edition-details';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +15,12 @@ export class EditionService {
     getUpcomingEdition(): Observable<Edition[]> {
       return this.http.get<Edition[]>(`${this.URL}/`);
     }
-  
-    
+
+    getUpcomingEditionsByArea(areaId: Number): Observable<Edition[]> {
+      return this.http.get<Edition[]>(`${this.URL}/upcomingWithArea/${areaId}`);
+    }
+
+    getEditionDetailsById(id: number): Observable<EditionDetailsDto> {
+      return this.http.get<EditionDetailsDto>(`${this.URL}/details/${id}`);
+    }
   }

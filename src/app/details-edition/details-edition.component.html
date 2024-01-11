@@ -1,0 +1,21 @@
+<div *ngIf="teacherDetails">
+<div class="card">
+   <h5 class="card-header">DETTAGLI TEACHER</h5>
+   <div class="card-body">
+     <h5 class="card-title">{{ teacherDetails.firstname }} {{ teacherDetails.lastname }}</h5>
+     <p class="card-text"></p>
+     <img [src]= "'/assets/img/teach_icons/' + teacherDetails.imgName" alt="">
+   </div>
+   <a [routerLink]="['/editions']" class="btn btn-primary">Back</a>
+ </div>
+</div>
+
+<div *ngIf="editionDetails">
+<div class="card">
+   <h5 class="card-header">{{ editionDetails.courseName }}</h5>
+   <div class="card-body">
+     <h5 class="card-title">Course Name: {{ editionDetails.duration }}</h5>
+     <a [routerLink]="['/editions']" class="btn btn-primary">Back</a>
+   </div>
+ </div>
+</div>
