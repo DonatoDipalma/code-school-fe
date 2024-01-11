@@ -1,8 +1,9 @@
 <div class="row align-items-end">
     <div class="container">
         <h1 style="color: white; background-color:#EA605B ;">OUR TEACHERS</h1>
+        <p>Il mio teacher preferito è {{favoriteTeacher}}</p>
         <div class="d-flex flex-row justify-content-center">
-            <app-teacher-card [teacher] = 't' *ngFor="let t of teachers"></app-teacher-card>
+            <app-teacher-card (pickFavorite) = "pickTeacher($event)" [teacher] = 't' *ngFor="let t of teachers"></app-teacher-card>
         </div>
     </div>
 </div>
