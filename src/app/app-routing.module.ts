@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'courses', component: CoursesComponent },
   { path: 'editions', component: UpcomingEditionsComponent },
-  { path: 'editions/:id', component: DetailsEditionComponent },
+  { path: 'editions/:editionId', component: DetailsEditionComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'add-course-form', component: AddCourseFormComponent},

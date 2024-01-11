@@ -18,10 +18,6 @@ export class TeachersService{
     // }
 
     getTopThreeTeachers(): Observable<Teacher[]> {
-        return this.http.get<Teacher[]>(this.URL);
+        return this.http.get<Teacher[]>(`${this.URL}/`);
     }
-
-    getTeacherById(id: number): Observable<TeacherSummaryDto> {
-        return this.http.get<TeacherSummaryDto>(`${this.URL}/${id}`);
-      }
 }

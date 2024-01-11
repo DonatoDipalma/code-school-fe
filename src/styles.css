@@ -8,7 +8,7 @@ body {
     padding: 0;
     height: 100vh;
     width: 100%;
-    background-color: whitesmoke;    
+    background-color: white;    
     font-family: 'DM Sans', sans-serif;
 }
 
@@ -173,3 +173,5 @@ section#s2 div > p {
     font-size: 20px;
     text-align: left;
 }
+
+

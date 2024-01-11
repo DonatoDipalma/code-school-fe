@@ -20,7 +20,8 @@ export class EditionService {
       return this.http.get<Edition[]>(`${this.URL}/upcomingWithArea/${areaId}`);
     }
 
-    getEditionDetailsById(id: number): Observable<EditionDetailsDto> {
-      return this.http.get<EditionDetailsDto>(`${this.URL}/details/${id}`);
+    getEditionDetailsById(editionId: number): Observable<EditionDetailsDto> {
+      console.log("Sto nella service ricevuto: " + editionId);
+      return this.http.get<EditionDetailsDto>(`${this.URL}/${editionId}`);
     }
   }

@@ -172,7 +172,7 @@ article.office {
 }
 
 a {
-  text-decoration: none; /* Rimuove la sottolineatura */
+  text-decoration: none;
 }
 
 .content-right {
@@ -182,29 +182,28 @@ a {
 
 .content-left p {
   margin: 0;
-  padding: 5px 10px; /* Aggiungi spazio intorno ai paragrafi */
-  border-radius: 8px; /* Aggiungi bordi arrotondati */
+  padding: 5px 10px; 
+  border-radius: 8px; 
 }
 
 .content-paragraph {
-  text-align: center; /* Centra il testo */
-  font-weight: 700; /* Grassetto */
-  color: black; /* Colore del testo nero */
+  text-align: center; 
+  font-weight: 700;
+  color: black; 
 
-  display: flex; /* Utilizza flexbox per allineare gli elementi */
-  flex-direction: column; /* Disposizione in colonna */
-  align-items: center; /* Centra orizzontalmente gli elementi */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
 
-  /* Stili per le icone */
   .bi {
     color: black;
-    font-size: 24px; /* Dimensione delle icone */
-    margin-bottom: 8px; /* Spazio tra le icone e il testo */
+    font-size: 24px; 
+    margin-bottom: 8px; 
   }
 }
 
 .content-right img {
-  width: 100px; /* Ridimensiona l'immagine */
+  width: 100px; 
 }
 
 .article.tech {
@@ -228,10 +227,10 @@ a {
   transform: scale(1.1);
 }
 
-/* Rimuovi il background-color dai paragrafi per renderli leggibili */
+
 .article.tech p {
   color: black;
-  text-align: left; /* Allinea il testo a sinistra */
+  text-align: left; 
 }
 
 article.design {
