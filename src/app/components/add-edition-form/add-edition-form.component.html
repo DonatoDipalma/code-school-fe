@@ -1,0 +1,72 @@
+<div class="container">
+   <h1 class="hover-effect">Crea una nuova edizione</h1>
+   <div class="row">
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/6822/6822288.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/9874/9874671.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/256/1945/1945655.png" alt="" class="hover-effect">
+     </div>
+   </div>
+ </div>
+ 
+ <form class="row g-3" (ngSubmit)="onSubmit()" [formGroup]="editionForm">
+   <div class="col-md-6">
+     <label for="title" class="form-label">Scegli corso:</label>
+     <select id="title" class="form-control" formControlName="idCourse">
+      <option selected value="">Scegli: </option>
+      <option [ngValue]="c.id" *ngFor="let c of courses"> {{c.title}} </option>
+      </select>
+     <span class="error">Campo obbligatorio</span>
+   </div>
+   <div class="col-md-6">
+     <label for="startDate" class="form-label">Data di inizio</label>
+     <input type="date" id="startDate" class="form-control" formControlName="startDate">
+     <span class="error">Campo obbligatorio</span>
+   </div>
+   <div class="col-md-6">
+     <label for="finishDate" class="form-label">Data di fine</label>
+     <input type="date" id="finishDate" class="form-control" formControlName="finishDate">
+     <span class="error">Campo obbligatorio</span>
+   </div>
+   <div class="col-6">
+     <label for="tutor" class="form-label">Tutor</label>
+     <input type="text" id="tutor" class="form-control" formControlName="tutor">
+   </div>
+   <div class="col-12">
+      <label for="typeP" class="form-label">Tipo di pagamento</label>
+     <select id="typeP" class="form-select" formControlName="pay">
+       <option selected value="">Scegli: </option>
+       <option value="FREE">FREE</option>
+       <option value="PERSONAL">PERSONAL</option>
+       <option value="COMPANY">COMPANY</option>
+       <option value="FINANCED">FINANCED</option>
+     </select>
+   </div>
+   <div class="col-md-6">
+     
+   </div>
+   
+   <div class="col-12">
+     <button type="submit" class="btn btn-primary">CREA</button>
+   </div>
+ 
+ </form>
+ 
+ <div class="container">
+   <div class="row">
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/1640/1640642.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/256/5390/5390225.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/6551/6551750.png" alt="" class="hover-effect">
+     </div>
+   </div>
+ </div>
+ 

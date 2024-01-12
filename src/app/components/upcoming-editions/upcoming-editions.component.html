@@ -36,12 +36,15 @@
           {{ue?.pay}}</p>
         
         <a [routerLink]="['/editions', ue.id]" (click)="showDetails(ue)" class="btn btn-primary">SCOPRI DI PIU'</a>
+      <p></p>
+        <button class="btn btn-primary" (click)="deleteEdition(ue.id)"><i class="bi bi-trash"></i></button>
       </div>
       <div *ngIf="ue.showDetails">
       </div>
     </div>
   </div>
-  
+
+  <a class="btn btn-primary hover-effect" routerLink="/add-edition-form" routerLinkActive="active">Crea nuova edizione</a>
 
 
 <div class="container1" style="margin-top: 15px;">

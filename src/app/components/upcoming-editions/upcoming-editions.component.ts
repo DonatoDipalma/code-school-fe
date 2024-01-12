@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Area } from 'src/model/dtos/area';
 
 import { Edition } from 'src/model/dtos/edition';
@@ -18,7 +19,7 @@ export class UpcomingEditionsComponent implements OnInit{
   areas :Area[]=[];
   areaForm!: FormGroup;
   
-  constructor(private formBuilder: FormBuilder, private editionService: EditionService, private areaService: AreaService){}
+  constructor(private route: Router, private formBuilder: FormBuilder, private editionService: EditionService, private areaService: AreaService){}
   
   
   ngOnInit() {
@@ -69,5 +70,11 @@ onSubmit() {
 
 showDetails(edition: Edition) {
   edition.showDetails = !edition.showDetails;
+}
+
+deleteEdition(editionId: number){
+  this.editionService.deleteEditionById(editionId).subscribe(()=>{
+    this.allUpcomingEditions = this.allUpcomingEditions.filter(edition => edition.id !== editionId);   
+  });
 }
 }
