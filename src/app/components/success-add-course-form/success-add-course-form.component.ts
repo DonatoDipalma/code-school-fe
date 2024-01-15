@@ -13,6 +13,6 @@ export class SuccessAddCourseFormComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.router.navigate(['/courses']); 
-    }, 3000);
+    }, 2000);
   }
 }

@@ -13,6 +13,19 @@ body {
     font-family:'DM Sans', sans-serif;
 }
 
+.small-btn.btn.btn-primary {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 35%; 
+    font-size: 16px;
+    line-height: 20px; 
+    background-color:rgba(255, 0, 0, 0.798);
+    border: 1px solid;
+}
+.small-btn.btn.btn-primary .bi-trash {
+    font-size: 20px;
+}
+
 header {
     width: 100%;
     text-align: center;
@@ -109,6 +122,7 @@ table.table-hover {
 th {
     background: linear-gradient(90deg, #EA605B 0%, rgba(88, 9, 128, 0.348) 64%, rgb(0, 174, 255) 100%);
     background-attachment: fixed;
+    color: white;
 }
 
 .btn.btn-primary {

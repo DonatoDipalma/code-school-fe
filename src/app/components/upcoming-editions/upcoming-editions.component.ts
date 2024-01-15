@@ -19,7 +19,10 @@ export class UpcomingEditionsComponent implements OnInit{
   areas :Area[]=[];
   areaForm!: FormGroup;
   
-  constructor(private route: Router, private formBuilder: FormBuilder, private editionService: EditionService, private areaService: AreaService){}
+  constructor(private route: Router, 
+              private formBuilder: FormBuilder,
+              private editionService: EditionService, 
+              private areaService: AreaService){}
   
   
   ngOnInit() {
@@ -30,11 +33,26 @@ export class UpcomingEditionsComponent implements OnInit{
     this.fetchUpcomingEdition();
 }
 
+fetchAllAreas(){
+  this.areaService.getAllAreas().subscribe({
+    next:as=> {
+      this.areas=as;
+      console.log(as);
+      
+    },
+    error:(error)=> {
+      console.error('Errore nel recupero Aree');
+        
+    }
+
+  });
+}
+
 fetchUpcomingEdition() {
   this.editionService.getUpcomingEdition().subscribe({
     next: eds => {
-      this.allUpcomingEditions = eds.map((ed: Edition) => {
-        return { ...ed, showDetails: false };
+      this.allUpcomingEditions = eds.map((ed: Edition) => { 
+        return { ...ed };
       });
     },
     error: (error) => {
@@ -43,33 +61,32 @@ fetchUpcomingEdition() {
   });
 }
 
-  fetchAllAreas(){
-    this.areaService.getAllAreas().subscribe({
-    next:as=> {
-      this.areas=as;
-      console.log(as);
-      
-    },
-    error:(error)=> {
-      console.error('Diahanee');
-        
-    }
-
-})};
-
-onSubmit() {
-  this.editionService.getUpcomingEditionsByArea(this.areaForm.get('areaIdForm')?.value).subscribe({
-    next: ue => {
-      this.allUpcomingEditions = ue;
-  },
-  error: (error) => {
-      console.error('Errore nel recupero delle edizioni:', error);
+filterAreas() {
+  const selectedAreaId = this.areaForm.get('areaIdForm')?.value;
+  
+  if (selectedAreaId !== null) {
+    this.editionService.getUpcomingEditionsByArea(selectedAreaId).subscribe({
+      next: ue => {
+        this.allUpcomingEditions = ue;
+      },
+      error: (error) => {
+        console.error('Errore nel recupero delle prossime edizioni:', error);
+      }
+    });
+  } else {
+    this.editionService.getUpcomingEdition().subscribe({
+      next: ue => {
+        this.allUpcomingEditions = ue;
+      },
+      error: (error) => {
+        console.error('Errore nel recupero delle prossime:', error);
+      }
+    });
   }
-});
 }
 
-showDetails(edition: Edition) {
-  edition.showDetails = !edition.showDetails;
+goToAllEditions() {
+  this.route.navigate(['/editions'])
 }
 
 deleteEdition(editionId: number){
@@ -77,4 +94,5 @@ deleteEdition(editionId: number){
     this.allUpcomingEditions = this.allUpcomingEditions.filter(edition => edition.id !== editionId);   
   });
 }
+
 }

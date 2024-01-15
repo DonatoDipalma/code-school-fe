@@ -1,5 +1,5 @@
 <div class="container">
-   <h1 class="hover-effect">Crea una nuova edizione</h1>
+   <h2 class="hover-effect">Crea una nuova edizione</h2>
    <div class="row">
      <div class="col-sm">
        <img src="https://cdn-icons-png.flaticon.com/512/6822/6822288.png" alt="" class="hover-effect">
@@ -13,7 +13,7 @@
    </div>
  </div>
  
- <form class="row g-3" (ngSubmit)="onSubmit()" [formGroup]="editionForm">
+ <form class="row g-3" (ngSubmit)="createNewEdition()" [formGroup]="editionForm">
    <div class="col-md-6">
      <label for="title" class="form-label">Scegli corso:</label>
      <select id="title" class="form-control" formControlName="idCourse">
@@ -53,7 +53,6 @@
    <div class="col-12">
      <button type="submit" class="btn btn-primary">CREA</button>
    </div>
- 
  </form>
  
  <div class="container">

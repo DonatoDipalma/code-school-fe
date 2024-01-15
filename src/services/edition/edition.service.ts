@@ -14,7 +14,7 @@ export class EditionService {
     constructor(private http: HttpClient) { }
   
     getUpcomingEdition(): Observable<Edition[]> {
-      return this.http.get<Edition[]>(`${this.URL}/`);
+      return this.http.get<Edition[]>(`${this.URL}/upcoming-editions`);
     }
 
     getUpcomingEditionsByArea(areaId: Number): Observable<Edition[]> {
@@ -29,7 +29,15 @@ export class EditionService {
     deleteEditionById(editionId: number): Observable<any>{
       return this.http.delete(`${this.URL}/${editionId}`);
     }
+    
     createEdition(editionData: AddEdition): Observable<void> {
       return this.http.post<void>(`${this.URL}/`, editionData);
     }
+    getAllEditions(): Observable<Edition[]> {
+      return this.http.get<Edition[]>(`${this.URL}/all`);
+    }
+    
+    getAllEditionsByAreaId(areaId: Number): Observable<Edition[]> {
+      return this.http.get<Edition[]>(`${this.URL}/allWithArea/${areaId}`);
+    }    
   }

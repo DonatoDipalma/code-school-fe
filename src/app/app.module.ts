@@ -17,8 +17,11 @@ import { LoginComponent } from './components/login/login.component';
 import { AddCourseFormComponent } from './components/add-course-form/add-course-form.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SuccessAddCourseFormComponent } from './components/success-add-course-form/success-add-course-form.component';
-import { DetailsEditionComponent } from './details-edition/details-edition.component';
+import { DetailsEditionComponent } from './components/details-edition/details-edition.component';
 import { AddEditionFormComponent } from './components/add-edition-form/add-edition-form.component';
+import { SuccessAddEditionFormComponent } from './components/success-add-edition-form/success-add-edition-form.component';
+import { EditionsComponent } from './components/editions/editions.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { AddEditionFormComponent } from './components/add-edition-form/add-editi
     MenuComponent,
     SuccessAddCourseFormComponent,
     DetailsEditionComponent,
-    AddEditionFormComponent
+    AddEditionFormComponent,
+    SuccessAddEditionFormComponent,
+    EditionsComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ import { EditionService } from 'src/services/edition/edition.service';
 })
 
   export class AddEditionFormComponent implements OnInit {
-    editionForm!: FormGroup;
+    editionForm!: FormGroup; // Il ! non è necessario inizializzarlo subito
     courses: Course[] = [];
     
     editionData: AddEdition = {
@@ -56,12 +56,12 @@ import { EditionService } from 'src/services/edition/edition.service';
       })
     }
 
-    onSubmit() {
+    createNewEdition() {
       if(this.editionForm.valid){
         this.editionData = {...this.editionForm.value};
         this.editionService.createEdition(this.editionData).subscribe({
           next: ed => {
-            alert("AGGIUNTO CON SUCCESSO");
+            this.router.navigate(["success-add-edition-form"]);
           },
           error: error => {
             console.error(error);

@@ -19,7 +19,7 @@ export class Teachers implements OnInit{
                 this.teachers = ts;
                 console.log(this.teachers);
             },
-            error: err => console.error("Errore")
+            error: err => console.error("Errore", err)
         });
     }
 
