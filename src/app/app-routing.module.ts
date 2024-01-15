@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -9,13 +9,21 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddCourseFormComponent } from './components/add-course-form/add-course-form.component';
 import { SuccessAddCourseFormComponent } from './components/success-add-course-form/success-add-course-form.component';
-import { UpcomingEditionDetailComponent } from './components/upcoming-edition-detail/upcoming-edition-detail.component';
+import { DetailsEditionComponent } from './components/details-edition/details-edition.component';
+import { AddEditionFormComponent } from './components/add-edition-form/add-edition-form.component';
+import { SuccessAddEditionFormComponent } from './components/success-add-edition-form/success-add-edition-form.component';
+import { EditionsComponent } from './components/editions/editions.component';
+import { SigninComponent } from './components/signin/signin.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'courses', component: CoursesComponent },
-  { path: 'editions', component: UpcomingEditionsComponent},
-  { path: 'editions/detail/:id', component: UpcomingEditionDetailComponent},
+  { path: 'editions', component: EditionsComponent },
+  { path: 'editions/:editionId', component: DetailsEditionComponent },
+  { path: 'upcomingEditions', component: UpcomingEditionsComponent },
+  { path: 'add-edition-form', component: AddEditionFormComponent },
+  { path: 'success-add-edition-form', component: SuccessAddEditionFormComponent},
   { path: 'about', component: AboutUsComponent },
+  { path: 'sign-in', component: SigninComponent},
   { path: 'login', component: LoginComponent },
   { path: 'add-course-form', component: AddCourseFormComponent},
   { path: 'success-add-course-form', component: SuccessAddCourseFormComponent }

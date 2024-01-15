@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CourseService } from 'src/services/courses/courses.service';
 import { Course } from 'src/model/dtos/course';
 import { Area } from 'src/model/dtos/area';
+import { AreaService } from 'src/services/area/area.service';
 
 @Component({
   selector: 'app-add-course-form',
@@ -12,11 +13,7 @@ import { Area } from 'src/model/dtos/area';
 })
 export class AddCourseFormComponent implements OnInit {
   courseForm!: FormGroup;
-  areas: Area[] = [
-    { id: 1, name: 'Area 1' },
-    { id: 2, name: 'Area 2' },
-    { id: 3, name: 'Area 3' },
-  ];
+  areas: Area[] = [];
   
   courseData: Course = {
     title: '',
@@ -27,11 +24,11 @@ export class AddCourseFormComponent implements OnInit {
     payment: '',
     skillLevel: ''
   };
-  courseCreatedSuccessfully: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
     private courseService: CourseService,
+    private areaService: AreaService,
     private router: Router
   ) {}
 
@@ -45,9 +42,18 @@ export class AddCourseFormComponent implements OnInit {
       payment: ['', Validators.required],
       skillLevel: ['', Validators.required]
     });
+
+    this.areaService.getAllAreas().subscribe({
+      next: areas => {
+        this.areas = areas;
+      },
+      error: error => {
+        console.error('Errore durante il recupero delle aree:', error);
+      }
+    });
   }
   
-  onSubmit() {
+  createNewCourse() {
     if (this.courseForm.valid) {
       this.courseData = { ...this.courseForm.value };
       this.courseService.createCourse(this.courseData).subscribe({
@@ -57,7 +63,7 @@ export class AddCourseFormComponent implements OnInit {
         error: error => {
           console.error('Errore durante la creazione del corso:', error);
         }
-      })
+      });
       
     } else {
       console.error('Form non valido.');

@@ -27,4 +27,14 @@ export class CoursesComponent implements OnInit{
             }
         });
     }
+    deleteCourse(courseId: number) {
+        this.courseService.deleteCourse(courseId).subscribe({
+            next: () => {
+                this.fetchAllCourses();
+            },
+            error: (error) => {
+                console.error('Errore nell\'eliminazione del corso:', error);
+            }
+        });
+    }
 }

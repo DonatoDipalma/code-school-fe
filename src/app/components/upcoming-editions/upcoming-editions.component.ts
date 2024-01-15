@@ -1,64 +1,98 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Area } from 'src/model/dtos/area';
+
 import { Edition } from 'src/model/dtos/edition';
-import { AreaService } from 'src/services/areas/areas.service';
-import { EditionService } from 'src/services/editions/editions.service';
+import { AreaService } from 'src/services/area/area.service';
+
+import { EditionService } from 'src/services/edition/edition.service';
 
 @Component({
   selector: 'app-upcoming-editions',
   templateUrl: './upcoming-editions.component.html',
   styleUrls: ['./upcoming-editions.component.css']
 })
-export class UpcomingEditionsComponent implements OnInit {
+export class UpcomingEditionsComponent implements OnInit{
   
+  allUpcomingEditions:Edition[]=[];
+  areas :Area[]=[];
   areaForm!: FormGroup;
-  upcomingEdition: Edition[] = [];
-  areas: Area[] = [];
+  
+  constructor(private route: Router, 
+              private formBuilder: FormBuilder,
+              private editionService: EditionService, 
+              private areaService: AreaService){}
+  
+  
+  ngOnInit() {
+    this.areaForm = this.formBuilder.group({
+      areaIdForm: ['Seleziona un\'area']
+    })
+    this.fetchAllAreas();
+    this.fetchUpcomingEdition();
+}
 
-    constructor(private formBuilder: FormBuilder, private editionService: EditionService, private areaService: AreaService){}
-
-    ngOnInit() {
-        this.areaForm = this.formBuilder.group({
-          areaIdForm: ['Seleziona un\'area']
-        })
-        this.fetchAllAreas();
-        this.fetchUpcomingEditions();
+fetchAllAreas(){
+  this.areaService.getAllAreas().subscribe({
+    next:as=> {
+      this.areas=as;
+      console.log(as);
+      
+    },
+    error:(error)=> {
+      console.error('Errore nel recupero Aree');
+        
     }
 
-    fetchAllAreas() {
-      this.areaService.getAllAreas().subscribe({
-        next: a => {
-          this.areas = a;
-          console.log(this.areas);
-        },
-        error: (error) => {
-          console.error('Errore nel recupero delle aree:', error);
-        }
+  });
+}
+
+fetchUpcomingEdition() {
+  this.editionService.getUpcomingEdition().subscribe({
+    next: eds => {
+      this.allUpcomingEditions = eds.map((ed: Edition) => { 
+        return { ...ed };
       });
+    },
+    error: (error) => {
+      console.error('Errore nel recupero delle edizioni:', error);
     }
+  });
+}
 
-    fetchUpcomingEditions() {
-        this.editionService.getUpcomingEditions().subscribe({
-            next: ue => {
-                this.upcomingEdition = ue;
-                console.log(this.upcomingEdition);
-            },
-            error: (error) => {
-                console.error('Errore nel recupero delle edizioni:', error);
-            }
-        });
-    }
+filterAreas() {
+  const selectedAreaId = this.areaForm.get('areaIdForm')?.value;
+  
+  if (selectedAreaId !== null) {
+    this.editionService.getUpcomingEditionsByArea(selectedAreaId).subscribe({
+      next: ue => {
+        this.allUpcomingEditions = ue;
+      },
+      error: (error) => {
+        console.error('Errore nel recupero delle prossime edizioni:', error);
+      }
+    });
+  } else {
+    this.editionService.getUpcomingEdition().subscribe({
+      next: ue => {
+        this.allUpcomingEditions = ue;
+      },
+      error: (error) => {
+        console.error('Errore nel recupero delle prossime:', error);
+      }
+    });
+  }
+}
 
-    onSubmit() {
-        this.editionService.getUpcomingEditionsByArea(this.areaForm.get('areaIdForm')?.value).subscribe({
-          next: ue => {
-            this.upcomingEdition = ue;
-            console.log(this.upcomingEdition);
-        },
-        error: (error) => {
-            console.error('Errore nel recupero delle edizioni:', error);
-        }
-      });
-    }
+goToAllEditions() {
+  this.route.navigate(['/editions'])
+}
+
+deleteEdition(editionId: number){
+  this.editionService.deleteEditionById(editionId).subscribe(()=>{
+    this.allUpcomingEditions = this.allUpcomingEditions.filter(edition => edition.id !== editionId);   
+  });
+}
+
 }

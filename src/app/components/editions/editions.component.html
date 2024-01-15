@@ -1,14 +1,13 @@
 <div class="text-center">
-  <button class="btn btn-primary-back hover-effect" (click)="goToAllEditions()">Torna a tutte le edizioni</button>
+  <button class="btn btn-primary-back hover-effect" (click)="goToUpcomingEditions()">Vai alle edizioni in partenza</button>
 </div>
-<h1 class="hover-effect">Tutte le Edizioni disponibili entro 6 mesi:</h1>
+<h1 class="hover-effect">Tutte le Edizioni:</h1>
 <div id="form-container">
-  <form action="#" [formGroup]="areaForm">
+  <form [formGroup]="areaForm">
     <select title="seleziona un'area" formControlName="areaIdForm" id="area" class="form-select" (change)="filterAreas()">
       <option [ngValue]="null" selected>Tutte le aree</option>
       <option *ngFor="let a of areas" [ngValue]="a.id">{{a.name}}</option>
-    </select>
-    
+    </select>    
   </form>
 </div>
 
@@ -26,28 +25,24 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="card" style="width: 15rem;" *ngFor="let edition of editions">
+    <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/2705/2705224.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{edition.courseName}}</h5>
+      <p class="card-text-date">
+        <i class="bi bi-calendar-event"></i> {{edition?.startDate}}</p><br>
+      <p class="card-text-tutor">
+        <i class="bi bi-person"></i>{{edition?.tutor}}<br></p>
+      <p class="card-text-pay">
+        {{edition?.pay}}</p>
 
-  <div class="container">
-    <div class="card" style="width: 15rem;" *ngFor="let ue of allUpcomingEditions">
-      <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/2705/2705224.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{ue.courseName}}</h5>
-        <p class="card-text-date">
-          <i class="bi bi-calendar-event"></i> {{ue?.startDate}}</p><br>
-          <p class="card-text-tutor">
-          <i class="bi bi-person"></i>{{ue?.tutor}}<br></p>
-          <p class="card-text-pay">
-          {{ue?.pay}}</p>
-        
-        <a [routerLink]="['/editions', ue.id]" class="btn btn-primary">SCOPRI DI PIU'</a>
+      <a [routerLink]="['/editions', edition.id]" class="btn btn-primary">SCOPRI DI PIU'</a>
       <p></p>
-        <button class="btn btn-primary" (click)="deleteEdition(ue.id)"><i class="bi bi-trash"></i></button>
-      </div>
-    
+      <button class="btn btn-primary" (click)="deleteEdition(edition.id)"><i class="bi bi-trash"></i></button>
     </div>
   </div>
-
-  
+</div>
 
 <div class="container1" style="margin-top: 15px;">
   <div class="row">
@@ -62,5 +57,4 @@
     </div>
   </div>
   <a class="btn btn-primary-create hover-effect" routerLink="/add-edition-form" routerLinkActive="active">Crea nuova edizione</a>
-
 </div>

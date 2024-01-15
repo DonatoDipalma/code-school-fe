@@ -9,7 +9,8 @@ import { TeachersService } from "src/services/teachers/teachers.service";
 })
 export class Teachers implements OnInit{
     teachers: Teacher[] = [];
-    favoriteTeacher: string = "nessuno";
+    favouriteTeacher: string = 'nessuno';
+    
     constructor(private teacherService: TeachersService){}
 
     ngOnInit(){
@@ -18,11 +19,12 @@ export class Teachers implements OnInit{
                 this.teachers = ts;
                 console.log(this.teachers);
             },
-            error: err => console.error("Errore")
+            error: err => console.error("Errore", err)
         });
     }
 
-    pickTeacher(name: string) {
-        this.favoriteTeacher = name;
+    receiveTeacher(name: string): void {
+        this.favouriteTeacher = name;
     }
+
 }

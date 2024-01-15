@@ -9,12 +9,6 @@ body {
    background-color: whitesmoke;
    font-family: 'DM Sans', sans-serif;
 }
-h2 {
-  font-size: 40px;
-  margin: 40px auto;
-  font-weight: 700;
-  color: black;
-}
 
   header {
     width: 100%;
@@ -77,7 +71,12 @@ img {
     background-color: #EA605B;
 }
 
-
+h2 {
+  font-size: 40px;
+  margin: 40px auto;
+  font-weight: 700;
+  color: black;
+}
 
 h1 {
   font-size: 40px;
