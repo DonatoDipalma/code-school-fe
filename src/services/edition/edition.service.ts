@@ -39,5 +39,9 @@ export class EditionService {
     
     getAllEditionsByAreaId(areaId: Number): Observable<Edition[]> {
       return this.http.get<Edition[]>(`${this.URL}/allWithArea/${areaId}`);
-    }    
+    }
+
+    deleteTeacherByTeacherIdAndEditionModuleId(idTeacher: number, idModule: number){
+      return this.http.delete(`${this.URL}/${idTeacher}/${idModule}`);
+    }
   }

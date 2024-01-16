@@ -12,8 +12,7 @@ import { TeachersService } from 'src/services/teachers/teachers.service';
 })
 export class DetailsEditionComponent implements OnInit {
 
-  teacherDetails: TeacherSummaryDto | undefined;
-  editionDetails: EditionDetailsDto | undefined;
+  editionDetails!: EditionDetailsDto;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,11 +26,23 @@ export class DetailsEditionComponent implements OnInit {
     this.editionService.getEditionDetailsById(editionId).subscribe({
       next: edt => {
         this.editionDetails = edt;
-        console.log('Edition details:', this.editionDetails);
       },
       error: err => {
         console.error('Errore nel recupero dei dettagli dell\'edizione:', err);
       }
   });
+  }
+
+  deleteTeacher(idEditionModule: number, idTeacher: number){
+    this.editionService.deleteTeacherByTeacherIdAndEditionModuleId(idTeacher, idEditionModule).subscribe({
+      next:(em => {
+        alert("Insegnante/i eliminato/i");
+        this.editionDetails.teachers = this.editionDetails.teachers.filter(
+          teacherAssignment => 
+            teacherAssignment.teacherSummary.id   != idTeacher
+            || teacherAssignment.editionModuleId  != idEditionModule
+          );
+      })
+    });
   }
 }  
