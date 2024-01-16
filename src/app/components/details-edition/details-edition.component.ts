@@ -36,11 +36,12 @@ export class DetailsEditionComponent implements OnInit {
   deleteTeacher(idEditionModule: number, idTeacher: number){
     this.editionService.deleteTeacherByTeacherIdAndEditionModuleId(idTeacher, idEditionModule).subscribe({
       next:(em => {
+        console.log(idEditionModule);
         alert("Insegnante/i eliminato/i");
         this.editionDetails.teachers = this.editionDetails.teachers.filter(
           teacherAssignment => 
             teacherAssignment.teacherSummary.id   != idTeacher
-            || teacherAssignment.editionModuleId  != idEditionModule
+            || teacherAssignment.moduleId  != idEditionModule
           );
       })
     });
