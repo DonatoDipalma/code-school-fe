@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Teacher } from "src/model/dtos/teacher";
+import { TeacherCompetenceDto } from "src/model/dtos/teacher-competence";
 import { TeacherSummaryDto } from "src/model/dtos/teachers-summary";
 @Injectable({
     providedIn : "root"
@@ -20,4 +21,7 @@ export class TeachersService{
     getTopThreeTeachers(): Observable<Teacher[]> {
         return this.http.get<Teacher[]>(`${this.URL}/`);
     }
+
+    // findTeachersBySkill(skillId: number, level: string): Observable<TeacherCompetenceDto[]>{
+    // }
 }

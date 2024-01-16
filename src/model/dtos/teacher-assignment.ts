@@ -3,5 +3,6 @@ import { TeacherSummaryDto } from "./teachers-summary";
 
 export interface TeacherAssignmentDto{
     teacherSummary: TeacherSummaryDto,
-    editionModuleId: number
+    moduleId: number,
+    moduleTitle: string
 }

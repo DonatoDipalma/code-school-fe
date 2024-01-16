@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Area } from 'src/model/dtos/area';
 import { Edition } from 'src/model/dtos/edition';
-import { AreaService } from 'src/services/area/area.service';
+import { CompetenceService } from 'src/services/area/competence.service';
 import { EditionService } from 'src/services/edition/edition.service';
 
 @Component({
@@ -17,7 +17,10 @@ export class EditionsComponent implements OnInit {
   areaForm!: FormGroup
 
 
-  constructor(private editionService: EditionService, private route: Router, private formBuilder: FormBuilder, private areaService: AreaService){}
+  constructor(private editionService: EditionService, 
+    private route: Router, 
+    private formBuilder: FormBuilder, 
+    private areaService: CompetenceService){}
 
   ngOnInit(): void {
     this.fetchAllAreas();

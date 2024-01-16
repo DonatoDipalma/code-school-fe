@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { CourseService } from 'src/services/courses/courses.service';
 import { Course } from 'src/model/dtos/course';
 import { Area } from 'src/model/dtos/area';
-import { AreaService } from 'src/services/area/area.service';
+import { CompetenceService } from 'src/services/area/competence.service';
 
 @Component({
   selector: 'app-add-course-form',
@@ -28,7 +28,7 @@ export class AddCourseFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private courseService: CourseService,
-    private areaService: AreaService,
+    private areaService: CompetenceService,
     private router: Router
   ) {}
 

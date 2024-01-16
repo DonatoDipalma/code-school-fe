@@ -13,6 +13,7 @@ import { TeachersService } from 'src/services/teachers/teachers.service';
 export class DetailsEditionComponent implements OnInit {
 
   editionDetails!: EditionDetailsDto;
+  teachersEmpty = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,11 @@ export class DetailsEditionComponent implements OnInit {
     this.editionService.getEditionDetailsById(editionId).subscribe({
       next: edt => {
         this.editionDetails = edt;
+        console.log(this.editionDetails);
+        
+        for(let i = 0; i < this.editionDetails.teachers.length; i++){
+          //this.teachersEmpty = this.teachersEmpty && this.editionDetails.teachers[i] === null
+        }
       },
       error: err => {
         console.error('Errore nel recupero dei dettagli dell\'edizione:', err);
@@ -40,7 +46,7 @@ export class DetailsEditionComponent implements OnInit {
         this.editionDetails.teachers = this.editionDetails.teachers.filter(
           teacherAssignment => 
             teacherAssignment.teacherSummary.id   != idTeacher
-            || teacherAssignment.editionModuleId  != idEditionModule
+            || teacherAssignment.moduleId  != idEditionModule
           );
       })
     });

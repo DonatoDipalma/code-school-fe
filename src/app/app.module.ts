@@ -22,6 +22,7 @@ import { AddEditionFormComponent } from './components/add-edition-form/add-editi
 import { SuccessAddEditionFormComponent } from './components/success-add-edition-form/success-add-edition-form.component';
 import { EditionsComponent } from './components/editions/editions.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SigninComponent } from './components/signin/signin.component';
     AddEditionFormComponent,
     SuccessAddEditionFormComponent,
     EditionsComponent,
-    SigninComponent
+    SigninComponent,
+    AssignTeacherToModuleComponent
   ],
   imports: [
     BrowserModule,
