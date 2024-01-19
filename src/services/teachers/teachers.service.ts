@@ -20,7 +20,9 @@ export class TeachersService{
     // }
 
     getTopThreeTeachers(): Observable<Teacher[]> {
-        return this.http.get<Teacher[]>(`${this.URL}/`);
+        const params = new HttpParams()
+        .set('limit', 3);
+        return this.http.get<Teacher[]>(`${this.URL}/three-teachers`, {params});
     }
 
     findTeachersBySkill(skillId: number, level: string): Observable<TeacherCompetenceDto[]> {
@@ -34,5 +36,9 @@ export class TeachersService{
     assignTeacherToModule(teacherId: number, moduleId: number): Observable<void> {
         return this.http.post<void>(`${this.TEACHER_ASSIGNMENT_URL}/${moduleId}/teacher`,
           { moduleId, teacherId });
-      }      
+    }   
+    
+    getAllTeachers(): Observable<Teacher[]> {
+        return this.http.get<Teacher[]>(`${this.URL}/three-teachers`);
+    }
 }
