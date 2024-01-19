@@ -44,6 +44,19 @@
 </form>
 <div class="container">
   <div class="row">
+    <div *ngFor="let t of teachers" class="col-sm-4">
+      <h2>ID Teacher : #{{t.id}}</h2>
+      <p>{{t.fullName}}</p>
+      <p>{{t.skillName}}</p>
+      <p>{{t.skillLevel}}</p>
+      <p *ngIf="!t.hoursRate">Dipendente</p>
+      <p *ngIf="t.hoursRate">Consulente con costo orario: {{t.hoursRate}}</p>
+      <button (click)="assignTeacher(t.id)" class="btn btn-primary hover-effect">Assegna</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
     <div class="col-sm">
       <img src="https://cdn-icons-png.flaticon.com/512/1640/1640642.png" alt="" class="hover-effect">
     </div>

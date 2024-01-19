@@ -14,6 +14,7 @@ export class DetailsEditionComponent implements OnInit {
 
   editionDetails!: EditionDetailsDto;
   teachersEmpty = true;
+  editionId!: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,16 +23,15 @@ export class DetailsEditionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const editionId = this.route.snapshot.params['editionId'];
-    
-    this.editionService.getEditionDetailsById(editionId).subscribe({
+    this.editionId = this.route.snapshot.params['editionId']; 
+    this.loadEditionDetails();
+  }
+
+  loadEditionDetails(){
+    this.editionService.getEditionDetailsById(this.editionId).subscribe({
       next: edt => {
         this.editionDetails = edt;
         console.log(this.editionDetails);
-        
-        for(let i = 0; i < this.editionDetails.teachers.length; i++){
-          //this.teachersEmpty = this.teachersEmpty && this.editionDetails.teachers[i] === null
-        }
       },
       error: err => {
         console.error('Errore nel recupero dei dettagli dell\'edizione:', err);
@@ -42,13 +42,13 @@ export class DetailsEditionComponent implements OnInit {
   deleteTeacher(idEditionModule: number, idTeacher: number){
     this.editionService.deleteTeacherByTeacherIdAndEditionModuleId(idTeacher, idEditionModule).subscribe({
       next:(em => {
-        alert("Insegnante/i eliminato/i");
-        this.editionDetails.teachers = this.editionDetails.teachers.filter(
-          teacherAssignment => 
-            teacherAssignment.teacherSummary.id   != idTeacher
-            || teacherAssignment.moduleId  != idEditionModule
-          );
-      })
+        alert("Docenza annullata");
+        this.loadEditionDetails();
+      }),
+      error: err => {
+        alert("Errore " + err);
+        console.log(err);
+      }
     });
   }
 }  

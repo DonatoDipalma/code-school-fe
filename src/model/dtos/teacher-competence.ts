@@ -5,4 +5,5 @@ export interface TeacherCompetenceDto {
     skillLevel: string;
     isEmployee: boolean;
     hoursRate: number;
-}
+  }
+  

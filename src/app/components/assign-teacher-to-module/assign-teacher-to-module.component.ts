@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Area } from 'src/model/dtos/area';
 import { Skill } from 'src/model/dtos/skill';
+import { Teacher } from 'src/model/dtos/teacher';
+import { TeacherAssignmentDto } from 'src/model/dtos/teacher-assignment';
+import { TeacherCompetenceDto } from 'src/model/dtos/teacher-competence';
+import { TeacherSummaryDto } from 'src/model/dtos/teachers-summary';
 import { CompetenceService } from 'src/services/area/competence.service';
 import { TeachersService } from 'src/services/teachers/teachers.service';
 
@@ -15,18 +20,26 @@ export class AssignTeacherToModuleComponent implements OnInit {
   levels!: string[];
   moduleName!: string;
   skills!: Skill[];
+  teachers!: TeacherCompetenceDto[];
   areaError = '';
   levelError = '';
   skillError = '';
+  teacherError = '';
   searchTeacherForm!: FormGroup;
   skillFormDisabled = true;
+  moduleId!: number;
+  editionId!: number;
   
   constructor(private formBuilder: FormBuilder,
+              private router: Router,
+              private route: ActivatedRoute,
               private competenceService: CompetenceService,
               private teacherService: TeachersService){
   }
 
   ngOnInit(): void {
+    this.editionId = this.route.snapshot.params['editionId'];
+    this.moduleId = this.route.snapshot.params['moduleId'];
     this.fetchAllAreas();
     this.fetchAllLevels();
 
@@ -70,10 +83,32 @@ export class AssignTeacherToModuleComponent implements OnInit {
   }
 
   //Decommentare prima di continuare :)
-   searchTeacher(){
-  //   this.teacherService.findTeachersBySkill(this.searchTeacherForm.get('skillId')?.value,
-  //     this.searchTeacherForm.get('levelId')?.value).subscribe({
-  //       next: 
-  //     })
-   }
+  searchTeacher() {
+    const skillId = this.searchTeacherForm.get('skillId')?.value;
+    const levelId = this.searchTeacherForm.get('levelId')?.value;
+    
+    if (skillId !== -1 && levelId !== -1) {
+      this.teacherService.findTeachersBySkill(skillId, levelId).subscribe({
+        next: ts => {
+          console.log(ts);
+          this.teachers = ts;
+        },
+        error: err => {
+          this.teacherError = err;
+        }
+      });
+    }
+  } 
+
+  assignTeacher(idTeacher: number) {
+    this.teacherService.assignTeacherToModule(idTeacher, this.moduleId).subscribe({
+      next: () => {
+        this.router.navigate(['editions', this.editionId])
+      },
+      error: err => {
+        console.log(err);
+        alert("Errore " + err);
+      }
+    });
+  }
 }

@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'add-course-form', component: AddCourseFormComponent},
   { path: 'success-add-course-form', component: SuccessAddCourseFormComponent },
-  { path: 'editions/modules/:moduleId', component: AssignTeacherToModuleComponent }
+  { path: 'editions/:editionId/:moduleId', component: AssignTeacherToModuleComponent }
 ];
 
 @NgModule({

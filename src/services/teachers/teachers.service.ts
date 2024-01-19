@@ -8,7 +8,8 @@ import { TeacherSummaryDto } from "src/model/dtos/teachers-summary";
     providedIn : "root"
 })
 export class TeachersService{
-    URL = "http://localhost:8080/api/teacher"
+    URL = "http://localhost:8080/api/teacher";
+    TEACHER_ASSIGNMENT_URL = "http://localhost:8080/api/edition-module"
     constructor(private http: HttpClient){
     }
 
@@ -22,6 +23,16 @@ export class TeachersService{
         return this.http.get<Teacher[]>(`${this.URL}/`);
     }
 
-    // findTeachersBySkill(skillId: number, level: string): Observable<TeacherCompetenceDto[]>{
-    // }
+    findTeachersBySkill(skillId: number, level: string): Observable<TeacherCompetenceDto[]> {
+        const params = new HttpParams()
+            .set('skillId', skillId)
+            .set('level', level);
+
+        return this.http.get<TeacherCompetenceDto[]>(`${this.URL}/`, { params });
+    }
+
+    assignTeacherToModule(teacherId: number, moduleId: number): Observable<void> {
+        return this.http.post<void>(`${this.TEACHER_ASSIGNMENT_URL}/${moduleId}/teacher`,
+          { moduleId, teacherId });
+      }      
 }
