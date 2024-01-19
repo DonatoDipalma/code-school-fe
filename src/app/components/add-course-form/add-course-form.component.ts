@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { CourseService } from 'src/services/courses/courses.service';
 import { Course } from 'src/model/dtos/course';
 import { Area } from 'src/model/dtos/area';
-import { CompetenceService } from 'src/services/competence/competence.service';
+import { CompetenceService } from 'src/services/area/competence.service';
 
 @Component({
   selector: 'app-add-course-form',

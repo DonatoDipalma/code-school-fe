@@ -1,4 +1,4 @@
-export interface Skill {
+export interface Skill{
     id: number,
     areaId: number,
     name: string

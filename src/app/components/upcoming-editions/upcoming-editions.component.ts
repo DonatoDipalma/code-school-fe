@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Area } from 'src/model/dtos/area';
 
 import { Edition } from 'src/model/dtos/edition';
-import { CompetenceService } from 'src/services/competence/competence.service';
+import { CompetenceService } from 'src/services/area/competence.service';
 
 import { EditionService } from 'src/services/edition/edition.service';
 
