@@ -1,0 +1,66 @@
+
+
+
+
+
+
+
+
+<div class="container">
+   <h1 class="hover-effect">Tutti i corsi disponibili:</h1>
+   <div class="row">
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/5278/5278681.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/3352/3352681.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/2910/2910637.png" alt="" class="hover-effect">
+     </div>
+   </div>
+ </div>
+ 
+ <div class="table-container">     
+       <table class="table table-hover custom-table">
+         <thead>
+           <tr>
+             <th></th>
+             <th>ID</th>
+             <th>NOME</th>
+             <th>COGNOME</th>
+             <th>ESPERIENZA</th>
+             <th>LIVELLO</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let t of allTeacher">
+            <td><img [src]="'/assets/img/teach_icons/' + t.imgName" alt="">
+            </td>
+             <td>{{ t.id }}</td>
+             <td>{{ t.firstname }}</td>
+             <td>{{ t.lastname }}</td>
+             <td>{{ t.professionalExperience }}</td>
+             <td>{{t.teacherLevel}}</td>
+             <td>
+             <!-- <button class="btn btn-primary hover-effect small-btn" (click)="deleteCourse(c.id!)"><i class="bi bi-trash"></i></button> -->
+           </td>
+           </tr>
+         </tbody>
+       </table>
+ </div>
+
+ <div class="container">
+   <div class="row">
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/4696/4696777.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/405/405719.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/2643/2643534.png" alt="" class="hover-effect">
+     </div>
+   </div>
+   <a class="btn btn-primary hover-effect" routerLink="/add-teacher-form" routerLinkActive="active">Crea nuovo Teacher</a>
+ </div>

@@ -1,3 +1,4 @@
+
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
@@ -35,4 +36,7 @@ export class TeachersService{
         return this.http.post<void>(`${this.TEACHER_ASSIGNMENT_URL}/${moduleId}/teacher`,
           { moduleId, teacherId });
       }      
+    getAllTeachers(): Observable<Teacher[]> {
+        return this.http.get<Teacher[]>(`${this.URL}/all-teachers`);
+    }
 }

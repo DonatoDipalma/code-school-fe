@@ -15,10 +15,12 @@ import { SuccessAddEditionFormComponent } from './components/success-add-edition
 import { EditionsComponent } from './components/editions/editions.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
+import { AllTeachersComponent } from './components/all-teachers/all-teachers.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'courses', component: CoursesComponent },
   { path: 'editions', component: EditionsComponent },
+  { path: 'teachers', component: AllTeachersComponent  },
   { path: 'editions/:editionId', component: DetailsEditionComponent },
   { path: 'upcomingEditions', component: UpcomingEditionsComponent },
   { path: 'add-edition-form', component: AddEditionFormComponent },
@@ -36,3 +38,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
