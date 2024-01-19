@@ -15,29 +15,31 @@
   </div>
   
   <form class="row g-3" (ngSubmit)="searchTeacher()" [formGroup]="searchTeacherForm">
-    <div class="col-6">
+    <div class="select-container">
+        <div class="col-md-2">
       <label for="area" class="form-label">Area</label>
       <select class="form-select" (change)="fetchSkills($event)" id="area" formControlName="areaId">
         <option value="-1">Seleziona area</option>
         <option *ngFor="let area of areas" [value]="area.id">{{ area.name }}</option>
       </select>
-    </div>
-    <div class="col-6">
+      </div>
+      <div class="col-md-2">
         <label for="skills" class="form-label">Nome skill</label>
         <select class="form-select" id="skills" formControlName="skillId">
           <option value="-1">Seleziona skill</option>
-          <option *ngFor="let s of levels" [value]="s">{{ s }}</option>
+          <option *ngFor="let s of skills" [value]="s.id">{{ s.name }}</option>
         </select>
-    </div>
-    <div class="col-6">
+      </div>
+      <div class="col-md-2">
         <label for="levels" class="form-label">Livello</label>
         <select class="form-select" id="levels" formControlName="levelId">
           <option value="-1">Seleziona livello</option>
           <option *ngFor="let l of levels" [value]="l">{{ l }}</option>
         </select>
-    </div>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Trova</button>
+      </div>
+      <div class="search-button col-md-2">
+        <button type="submit" [disabled]="searchTeacherForm.get('skillId')?.value == -1 || searchTeacherForm.get('levelId')?.value == -1" class="btn btn-primary">Trova</button>
+      </div>
     </div>
   </form>
   

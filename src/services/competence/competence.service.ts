@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Area } from 'src/model/dtos/area';
+import { Skill } from 'src/model/dtos/skill';
 
 @Injectable({
   providedIn: 'root'
@@ -21,4 +22,8 @@ export class CompetenceService {
       return this.http.get<string[]>(`${this.COMPETENCE_URL}/levels`);
     }
 
+    getSkillByArea(idArea: number): Observable<Skill[]> {
+      const params = new HttpParams().set('areaId', idArea);
+      return this.http.get<Skill[]>(`${this.COMPETENCE_URL}/skill`, {params});
+    }
   }
