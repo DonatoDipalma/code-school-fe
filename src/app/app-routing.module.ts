@@ -15,6 +15,7 @@ import { SuccessAddEditionFormComponent } from './components/success-add-edition
 import { EditionsComponent } from './components/editions/editions.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
+import { DetailsCourseComponent } from './details-course/details-course.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'courses', component: CoursesComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'add-course-form', component: AddCourseFormComponent},
   { path: 'success-add-course-form', component: SuccessAddCourseFormComponent },
-  { path: 'editions/:editionId/:moduleId', component: AssignTeacherToModuleComponent }
+  { path: 'editions/:editionId/:moduleId', component: AssignTeacherToModuleComponent },
+  { path: 'courses/courseDetail', component: DetailsCourseComponent},
 ];
 
 @NgModule({
