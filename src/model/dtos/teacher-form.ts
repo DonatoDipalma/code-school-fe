@@ -4,7 +4,7 @@ export interface TeacherFormData {
     fiscalCode: string,
     email: string,
     bio: string,
-    begunTeaching: string,
+    begunTeaching: Date,
     nickname: string,
     professionalExperience: string
 }

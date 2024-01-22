@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TeacherFormData } from 'src/model/dtos/teacher-form';
 import { TeachersService } from 'src/services/teachers/teachers.service';
@@ -18,7 +18,7 @@ export class AddTeacherFormComponent implements OnInit{
     fiscalCode: '',
     email: '',
     bio: '',
-    begunTeaching: '',
+    begunTeaching: new Date(),
     nickname: '',
     professionalExperience: ''
   }
@@ -31,11 +31,28 @@ export class AddTeacherFormComponent implements OnInit{
 
   ngOnInit(): void {
       this.teacherForm = this.formBuilder.group({
-
+        firstname: ['', Validators.required],
+        lastname: ['', Validators.required],
+        fiscalCode: ['', Validators.required],
+        email: ['', Validators.required],
+        bio: ['', Validators.required],
+        begunTeaching: ['', Validators.required],
+        nickname: ['', Validators.required],
+        professionalExperience: ['', Validators.required]
       })
   }
 
   createNewTeacher() {
-    alert("COMING SOON!");
+    if(this.teacherForm.valid) {
+      this.teacherData = {...this.teacherForm.value};
+      this.teacherService.addNewTeacher(this.teacherData).subscribe({
+        next: t => {
+          this.router.navigate(['success-add-teacher-form']);
+        },
+        error: error => {
+          console.error(error)
+        }
+      })
+    }
   }
 }

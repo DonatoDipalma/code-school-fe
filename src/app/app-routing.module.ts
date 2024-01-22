@@ -17,9 +17,13 @@ import { SigninComponent } from './components/signin/signin.component';
 import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
 import { TeachersListComponent } from './components/teachers-list/teachers-list.component';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
+import { MaintenanceComponent } from './components/maintenance/maintenance.component';
+import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';
+import { DetailsCourseComponent } from './components/details-course/details-course.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'courses', component: CoursesComponent },
+  { path: 'courses/:courseId', component: DetailsCourseComponent},
   { path: 'editions', component: EditionsComponent },
   { path: 'editions/:editionId', component: DetailsEditionComponent },
   { path: 'upcomingEditions', component: UpcomingEditionsComponent },
@@ -32,7 +36,9 @@ const routes: Routes = [
   { path: 'success-add-course-form', component: SuccessAddCourseFormComponent },
   { path: 'teachers', component: TeachersListComponent },
   { path: 'teachers/new', component: AddTeacherFormComponent },
-  { path: 'editions/:editionId/:moduleId', component: AssignTeacherToModuleComponent }
+  { path: 'editions/:editionId/:moduleId', component: AssignTeacherToModuleComponent },
+  { path: 'success-add-teacher-form', component: SuccessAddTeacherFormComponent },
+  { path: 'maintenance', component: MaintenanceComponent}
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AddEdition } from 'src/model/dtos/add-edition';
 import { Course } from 'src/model/dtos/course';
 import { Edition } from 'src/model/dtos/edition';
@@ -35,7 +35,10 @@ import { EditionService } from 'src/services/edition/edition.service';
     ) {}
   
     ngOnInit(): void {
-      
+      this.buildFullForm();
+    }
+
+    buildFullForm() {
       this.getAllCourses();
       this.editionForm = this.formBuilder.group({
         idCourse: ['', Validators.required],
@@ -45,14 +48,11 @@ import { EditionService } from 'src/services/edition/edition.service';
         tutor: ['', Validators.required],
         pay: ['', Validators.required]
       });
-
-      
     }
 
     getAllCourses(){
       this.courseService.getAllCourses().subscribe({
         next: c => this.courses = c
-
       })
     }
 

@@ -23,4 +23,8 @@ export class CourseService {
     return this.http.delete<void>(`${this.URL}/${courseId}`);
   }
 
+  getCourseDetails(courseId: number): Observable<Course> {
+    return this.http.get<Course>(`${this.URL}/${courseId}`)
+  }
+
 }
