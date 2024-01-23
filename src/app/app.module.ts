@@ -25,6 +25,8 @@ import { SigninComponent } from './components/signin/signin.component';
 import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
 import { AllTeachersComponent } from './components/all-teachers/all-teachers.component';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
+import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';
+import { DetailCourseComponent } from './components/detail-course/detail-course.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { AddTeacherFormComponent } from './components/add-teacher-form/add-teach
     SigninComponent,
     AssignTeacherToModuleComponent,
     AllTeachersComponent,
-    AddTeacherFormComponent
+    AddTeacherFormComponent,
+    SuccessAddTeacherFormComponent,
+    DetailCourseComponent
   ],
   imports: [
     BrowserModule,

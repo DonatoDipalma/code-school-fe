@@ -1,1 +1,74 @@
-<p>add-teacher-form works!</p>
+<div class="container">
+    <h2 class="hover-effect">Crea una nuova edizione</h2>
+    <div class="row">
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/6822/6822288.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/9874/9874671.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/256/1945/1945655.png" alt="" class="hover-effect">
+      </div>
+    </div>
+  </div>
+  
+  <form class="row g-3" (ngSubmit)="createNewTeacher()" [formGroup]="teacherForm">
+    
+    <div class="col-md-6">
+      <label for="firstname" class="form-label">Nome</label>
+      <input type="text" id="firstname" class="form-control" formControlName="firstname">
+      <span class="error">Campo obbligatorio</span>
+    </div>
+    <div class="col-md-6">
+      <label for="lastname" class="form-label">Cognome</label>
+      <input type="text" id="lastname" class="form-control" formControlName="lastname">
+      <span class="error">Campo obbligatorio</span>
+    </div>
+    <div class="col-6">
+      <label for="bio" class="form-label">Bio</label>
+      <input type="text" id="bio" class="form-control" formControlName="bio">
+    </div>
+    <div class="col-md-6">
+        <label for="begunTeaching" class="form-label">inizio data insegnamento</label>
+        <input type="date" id="begunTeaching" class="form-control" formControlName="begunTeaching">
+        <span class="error">Campo obbligatorio</span>
+      </div>
+    <div class="col-md-6">
+        <label for="nickname" class="form-label">nickname</label>
+        <input type="text" id="nickname" class="form-control" formControlName="nickname">
+        <span class="error">Campo obbligatorio</span>
+        </div>
+    <div class="col-md-6">
+        <label for="professionalExperience" class="form-label">Esperienza Professionale </label>
+        <input type="text" id="professionalExperience" class="form-control" formControlName="professionalExperience">
+        <span class="error">Campo obbligatorio</span>
+        </div>
+    <div class="col-md-6">
+        <label for="imgName" class="form-label">Immagine </label>
+        <select id="imgName" class="form-select" formControlName="imgName">
+            <option selected value="">Scegli: </option>
+            <option value="albus.webp">Silente</option>
+            <option value="lord.webp">Voldemort</option>
+            <option value="severus.jpg">Phyton</option>
+          </select>
+        <span class="error">Campo obbligatorio</span>
+        </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">CREA</button>
+    </div>
+  </form>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/1640/1640642.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/256/5390/5390225.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/6551/6551750.png" alt="" class="hover-effect">
+      </div>
+    </div>
+  </div>

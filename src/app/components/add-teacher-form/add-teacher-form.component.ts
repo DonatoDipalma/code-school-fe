@@ -38,26 +38,24 @@ export class AddTeacherFormComponent {
       begunTeaching: ['', Validators.required],
       nickname: ['', Validators.required],
       professionalExperience: ['', Validators.required],
-      teacherLevel: ['', Validators.required]
+      imgName :['',Validators.required]
     });
-
-  
-  // createNewTeacher() {
-  //   if (this.teacherForm.valid) {
-  //     this.teacherData = { ...this.teacherForm.value };
-  //     this.teacherService.createTeacher(this.teacherData).subscribe({
-  //       next: ts => {
-  //         this.router.navigate(['/success-add-course-form']);
-  //       },
-  //       error: error => {
-  //         console.error('Errore durante la creazione del corso:', error);
-  //       }
-  //     });
+  }
+  createNewTeacher() {
+     if (this.teacherForm.valid) {
+      this.teacherData = { ...this.teacherForm.value };
+      this.teacherService.createTeacher(this.teacherData).subscribe({
+        next: ts => {
+           this.router.navigate(['/success-add-teacher-form']);
+        },
+       error: error => {
+           console.error('Errore durante la creazione del teacher :', error);
+        }
+       });
       
-  //   } else {
-  //     console.error('Form non valido.');
-  //   }
-  // }
-}
+     } else {
+      console.error('Form non valido.');
+     }
+   }
 
 }

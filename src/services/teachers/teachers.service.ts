@@ -37,6 +37,10 @@ export class TeachersService{
           { moduleId, teacherId });
       }      
     getAllTeachers(): Observable<Teacher[]> {
-        return this.http.get<Teacher[]>(`${this.URL}/all-teachers`);
+        return this.http.get<Teacher[]>(`${this.URL}/all`);
+    }
+
+    createTeacher( teacher: Teacher):Observable<void>{
+        return this.http.post<void>(`${this.URL}/`,teacher);
     }
 }
