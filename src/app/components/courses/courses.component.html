@@ -1,58 +1,57 @@
-  <div class="container">
-    <h1 class="hover-effect">Tutti i corsi disponibili:</h1>
-    <div class="row">
-      <div class="col-sm">
-        <img src="https://cdn-icons-png.flaticon.com/512/5278/5278681.png" alt="" class="hover-effect">
-      </div>
-      <div class="col-sm">
-        <img src="https://cdn-icons-png.flaticon.com/512/3352/3352681.png" alt="" class="hover-effect">
-      </div>
-      <div class="col-sm">
-        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910637.png" alt="" class="hover-effect">
-      </div>
-    </div>
-  </div>
-  
-  <div class="table-container">     
-        <table class="table table-hover custom-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>TITOLO</th>
-              <th>DURATA</th>
-              <th>TIPOLOGIA</th>
-              <th>EDIZIONE</th>
-              <th>AZIONI</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let c of allCourses">
-              <td>{{ c.id }}</td>
-              <td>{{ c.title }}</td>
-              <td>{{ c.duration }}</td>
-              <td>{{ c.courseType }}</td>
-              <td>
-                <a>{{c.areaId}}</a>
-              </td>
-              <td>
-              <button class="btn btn-primary hover-effect small-btn" (click)="deleteCourse(c.id!)"><i class="bi bi-trash"></i></button>
-            </td>
-            </tr>
-          </tbody>
-        </table>
-  </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <img src="https://cdn-icons-png.flaticon.com/512/4696/4696777.png" alt="" class="hover-effect">
-      </div>
-      <div class="col-sm">
-        <img src="https://cdn-icons-png.flaticon.com/512/405/405719.png" alt="" class="hover-effect">
-      </div>
-      <div class="col-sm">
-        <img src="https://cdn-icons-png.flaticon.com/512/2643/2643534.png" alt="" class="hover-effect">
+
+<h1 class="hover-effect">Tutti i Corsi:</h1>
+
+
+<div class="container1" style="margin-top: 15px;">
+  <div class="row">
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159407.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/3771/3771395.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/2620/2620490.png" alt="" class="hover-effect">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card" style="width: 15rem;" *ngFor="let course of allCourses">
+    <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/4191/4191039.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ course.title }}</h5>
+      <p class="card-text-duration"><i class="bi bi-clock"></i> {{ course.duration }}h</p>
+      <p class="card-text-type">{{ course.courseType }}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="buttons">
+          <button class="btn btn-primary hover-effect small-btn-info" [routerLink]="['/courses', course.id]">
+            <i class="bi bi-info-square-fill"></i>
+          </button>
+          <button class="btn btn-primary hover-effect small-btn-bin" (click)="deleteCourse(course.id!)">
+            <i class="bi bi-trash"></i>
+          </button>
+          <button class="btn btn-primary hover-effect small-btn-bin" [routerLink]="['/update-course-form', course.id]">
+            <i class="bi bi-arrow-clockwise"></i>
+          </button>
+        </div>
       </div>
     </div>
-    <a class="btn btn-primary hover-effect" routerLink="/add-course-form" routerLinkActive="active">Crea nuovo corso</a>
   </div>
+</div>
+
+<div class="container1" style="margin-top: 15px;">
+  <div class="row">
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/1296/1296693.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159172.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/9727/9727439.png" alt="" class="hover-effect">
+    </div>
+  </div>
+  <a class="btn btn-primary-create hover-effect" routerLink="/add-course-form" routerLinkActive="active">Crea nuovo corso</a>
+</div>

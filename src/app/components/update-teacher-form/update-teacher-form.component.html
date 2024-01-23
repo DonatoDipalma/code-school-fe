@@ -1,5 +1,5 @@
 <div class="container">
-   <h2 class="hover-effect">Crea un nuovo teacher</h2>
+   <h2 class="hover-effect">Aggiorna i dati del teacher</h2>
    <div class="row">
      <div class="col-sm">
        <img src="https://cdn-icons-png.flaticon.com/512/6822/6822288.png" alt="" class="hover-effect">
@@ -12,8 +12,8 @@
      </div>
    </div>
  </div>
- 
- <form class="row g-3" (ngSubmit)="createNewTeacher()" [formGroup]="teacherForm">
+
+<form class="row g-3" (ngSubmit)="updateTeacher()" [formGroup]="teacherForm">
    <div class="col-md-6">
      <label for="firstname" class="form-label">Nome</label>
      <input type="text" id="firstname" class="form-control" formControlName="firstname">
@@ -61,11 +61,11 @@
     </div>
     
    <div class="col-12">
-     <button type="submit" class="btn btn-primary">CREA</button>
+     <button type="submit" class="btn btn-primary">AGGIORNA</button>
    </div>
  </form>
- 
- <div class="container">
+
+<div class="container">
    <div class="row">
      <div class="col-sm">
        <img src="https://cdn-icons-png.flaticon.com/512/1640/1640642.png" alt="" class="hover-effect">
@@ -77,5 +77,4 @@
        <img src="https://cdn-icons-png.flaticon.com/512/6551/6551750.png" alt="" class="hover-effect">
      </div>
    </div>
- </div>
- 
+</div>

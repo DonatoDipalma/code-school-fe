@@ -15,7 +15,7 @@ export class CoursesComponent implements OnInit{
     ngOnInit(){
         this.fetchAllCourses();
     }
-
+    
     fetchAllCourses() {
         this.courseService.getAllCourses().subscribe({
             next: cs => {

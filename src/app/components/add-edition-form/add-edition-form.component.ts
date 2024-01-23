@@ -19,7 +19,7 @@ import { EditionService } from 'src/services/edition/edition.service';
     
     editionData: AddEdition = {
       idCourse: 0,
-      idRoom: 1,
+      idRoom: 0,
       startDate: new Date(),
       finishDate: new Date(),
       tutor: '',
@@ -39,7 +39,7 @@ import { EditionService } from 'src/services/edition/edition.service';
       this.getAllCourses();
       this.editionForm = this.formBuilder.group({
         idCourse: ['', Validators.required],
-        idRoom: [1],
+        idRoom: ['', Validators.required],
         startDate: ['', Validators.required],
         finishDate: ['', Validators.required],
         tutor: ['', Validators.required],

@@ -13,8 +13,10 @@ import { EditionService } from 'src/services/edition/edition.service';
 })
 export class EditionsComponent implements OnInit {
   editions: Edition[] = [];
-  areas: Area[]=[];
-  areaForm!: FormGroup
+allEditions: Edition[] = [];
+areas: Area[] = [];
+areaForm!: FormGroup;
+
 
 
   constructor(private editionService: EditionService, 
@@ -45,9 +47,8 @@ export class EditionsComponent implements OnInit {
 fetchAllEdition() {
   this.editionService.getAllEditions().subscribe({
     next: eds => {
-      this.editions = eds.map((ed: Edition) => {
-        return { ...ed };
-      });
+      this.editions = eds.map((ed: Edition) => ({ ...ed }));
+      this.allEditions = [...this.editions];
     },
     error: (error) => {
       console.error('Errore nel recupero delle edizioni:', error);
@@ -55,29 +56,25 @@ fetchAllEdition() {
   });
 }
 
+
 filterAreas() {
   const selectedAreaId = this.areaForm.get('areaIdForm')?.value;
-  
+
   if (selectedAreaId !== null) {
     this.editionService.getAllEditionsByAreaId(selectedAreaId).subscribe({
       next: ed => {
         this.editions = ed;
+        console.log(selectedAreaId)
       },
       error: (error) => {
         console.error('Errore nel recupero delle edizioni:', error);
       }
     });
   } else {
-    this.editionService.getAllEditions().subscribe({
-      next: ed => {
-        this.editions = ed;
-      },
-      error: (error) => {
-        console.error('Errore nel recupero delle edizioni:', error);
-      }
-    });
+    this.editions = [...this.allEditions];
   }
 }
+
 
 goToUpcomingEditions() {
   this.route.navigate(['/upcomingEditions'])

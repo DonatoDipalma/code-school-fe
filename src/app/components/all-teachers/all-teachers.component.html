@@ -1,66 +1,59 @@
 
+<h1 class="hover-effect">Tutti i Teacher:</h1>
 
-
-
-
-
-
+<div class="container1" style="margin-top: 15px;">
+  <div class="row">
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159407.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/3771/3771395.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/2620/2620490.png" alt="" class="hover-effect">
+    </div>
+  </div>
+</div>
 
 <div class="container">
-   <h1 class="hover-effect">Tutti i corsi disponibili:</h1>
-   <div class="row">
-     <div class="col-sm">
-       <img src="https://cdn-icons-png.flaticon.com/512/5278/5278681.png" alt="" class="hover-effect">
-     </div>
-     <div class="col-sm">
-       <img src="https://cdn-icons-png.flaticon.com/512/3352/3352681.png" alt="" class="hover-effect">
-     </div>
-     <div class="col-sm">
-       <img src="https://cdn-icons-png.flaticon.com/512/2910/2910637.png" alt="" class="hover-effect">
-     </div>
-   </div>
- </div>
- 
- <div class="table-container">     
-       <table class="table table-hover custom-table">
-         <thead>
-           <tr>
-             <th></th>
-             <th>ID</th>
-             <th>NOME</th>
-             <th>COGNOME</th>
-             <th>ESPERIENZA</th>
-             <th>LIVELLO</th>
-           </tr>
-         </thead>
-         <tbody>
-           <tr *ngFor="let t of allTeacher">
-            <td><img [src]="'/assets/img/teach_icons/' + t.imgName" alt="">
-            </td>
-             <td>{{ t.id }}</td>
-             <td>{{ t.firstname }}</td>
-             <td>{{ t.lastname }}</td>
-             <td>{{ t.professionalExperience }}</td>
-             <td>{{t.teacherLevel}}</td>
-             <td>
-             <!-- <button class="btn btn-primary hover-effect small-btn" (click)="deleteCourse(c.id!)"><i class="bi bi-trash"></i></button> -->
-           </td>
-           </tr>
-         </tbody>
-       </table>
- </div>
+  <div class="card" style="width: 15rem;" *ngFor="let t of allTeacher">
+    <img [src]="'/assets/img/teach_icons/' + t.imgName" alt="" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title"><i class="bi bi-person"></i>{{t.firstname}} {{t.lastname}}</h5>
+      <hr>
+      <p class="card-text-level">
+        <i class="bi bi-bar-chart-fill"></i> {{t.teacherLevel}}</p><br>
+      <p class="card-text-expe"><i class="bi bi-file-earmark-code-fill"></i>
+        {{t.professionalExperience}}<br></p>
 
- <div class="container">
-   <div class="row">
-     <div class="col-sm">
-       <img src="https://cdn-icons-png.flaticon.com/512/4696/4696777.png" alt="" class="hover-effect">
-     </div>
-     <div class="col-sm">
-       <img src="https://cdn-icons-png.flaticon.com/512/405/405719.png" alt="" class="hover-effect">
-     </div>
-     <div class="col-sm">
-       <img src="https://cdn-icons-png.flaticon.com/512/2643/2643534.png" alt="" class="hover-effect">
-     </div>
-   </div>
-   <a class="btn btn-primary hover-effect" routerLink="/add-teacher-form" routerLinkActive="active">Crea nuovo Teacher</a>
- </div>
+        <div class="buttons">
+          <button class="btn btn-primary hover-effect small-btn-info" [routerLink]="['/teachers', t.id]">
+            <i class="bi bi-info-square-fill"></i>
+          </button>
+          <button class="btn btn-primary hover-effect small-btn-bin" (click)="deleteTeacher(t.id!)">
+            <i class="bi bi-trash"></i>
+          </button>
+          <button class="btn btn-primary hover-effect small-btn-bin" [routerLink]="['/update-teacher-form', t.id]">
+            <i class="bi bi-arrow-clockwise"></i>
+          </button>
+        </div>
+  </div>
+</div>
+
+<div class="container1" style="margin-top: 15px;">
+  <div class="row">
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/1296/1296693.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159172.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/9727/9727439.png" alt="" class="hover-effect">
+    </div>
+  </div>
+  <a class="btn btn-primary-create hover-effect" routerLink="/add-teacher-form" routerLinkActive="active">Crea nuovo Teacher</a>
+</div>
+
+
+

@@ -6,7 +6,7 @@
   <form [formGroup]="areaForm">
     <select title="seleziona un'area" formControlName="areaIdForm" id="area" class="form-select" (change)="filterAreas()">
       <option [ngValue]="null" selected>Tutte le aree</option>
-      <option *ngFor="let a of areas" [ngValue]="a.id">{{a.name}}</option>
+      <option *ngFor="let a of areas" [ngValue]="a.id">{{a.id}}</option>
     </select>    
   </form>
 </div>
@@ -36,11 +36,16 @@
         <i class="bi bi-person"></i>{{edition?.tutor}}<br></p>
       <p class="card-text-pay">
         {{edition?.pay}}</p>
+        <p class="card-text-edition">Edizione {{edition.id}}</p>
 
-      <a [routerLink]="['/editions', edition.id]" class="btn btn-primary">SCOPRI DI PIU'</a>
-      <p></p>
+        <div class="buttons">
+      <button [routerLink]="['/editions', edition.id]" class="btn btn-primary"><i class="bi bi-info-square-fill"></i></button>
       <button class="btn btn-primary" (click)="deleteEdition(edition.id)"><i class="bi bi-trash"></i></button>
+      <button class="btn btn-primary hover-effect small-btn-bin" [routerLink]="['/update-edition-form', edition.id]">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
     </div>
+  </div>
   </div>
 </div>
 

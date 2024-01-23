@@ -37,6 +37,22 @@ export class TeachersService{
           { moduleId, teacherId });
       }      
     getAllTeachers(): Observable<Teacher[]> {
-        return this.http.get<Teacher[]>(`${this.URL}/all-teachers`);
+        return this.http.get<Teacher[]>(`${this.URL}/all`);
     }
+
+    createTeacher(teacherData: Teacher): Observable<void> {
+        return this.http.post<void>(`${this.URL}/`, teacherData);
+      }
+
+      deleteTeacher(teacherId: number): Observable<void> {
+        return this.http.delete<void>(`${this.URL}/${teacherId}`);
+      }
+
+      getTeacherDetailsById(teacherId: number): Observable<Teacher> {
+        return this.http.get<Teacher>(`${this.URL}/${teacherId}`);
+      }
+
+      updateTeacher(teacher: Teacher): Observable<any> {
+        return this.http.put<any>(`${this.URL}/${teacher.id}`, teacher);
+      }
 }

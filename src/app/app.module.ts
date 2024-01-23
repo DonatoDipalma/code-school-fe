@@ -25,6 +25,12 @@ import { SigninComponent } from './components/signin/signin.component';
 import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
 import { AllTeachersComponent } from './components/all-teachers/all-teachers.component';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
+import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';
+import { DetailsCourseComponent } from './components/details-course/details-course.component';
+import { DetailsTeacherComponent } from './components/details-teacher/details-teacher.component';
+import { UpdateTeacherFormComponent } from './components/update-teacher-form/update-teacher-form.component';
+import { UpdateCourseFormComponent } from './components/update-course-form/update-course-form.component';
+import { UpdateEditionFormComponent } from './components/update-edition-form/update-edition-form.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +53,13 @@ import { AddTeacherFormComponent } from './components/add-teacher-form/add-teach
     SigninComponent,
     AssignTeacherToModuleComponent,
     AllTeachersComponent,
-    AddTeacherFormComponent
+    AddTeacherFormComponent,
+    SuccessAddTeacherFormComponent,
+    DetailsCourseComponent,
+    DetailsTeacherComponent,
+    UpdateTeacherFormComponent,
+    UpdateCourseFormComponent,
+    UpdateEditionFormComponent
   ],
   imports: [
     BrowserModule,
@@ -59,4 +71,5 @@ import { AddTeacherFormComponent } from './components/add-teacher-form/add-teach
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {}

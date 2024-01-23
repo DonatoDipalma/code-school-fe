@@ -5,6 +5,7 @@ import { TeacherSummaryDto } from "./teachers-summary";
 export interface EditionDetailsDto {
    id: number;
    courseName: string;
+   roomName: string;
    startDate: Date;
    finishDate: Date;
    tutor: string;

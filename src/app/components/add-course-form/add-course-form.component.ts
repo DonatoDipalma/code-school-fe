@@ -18,7 +18,7 @@ export class AddCourseFormComponent implements OnInit {
   courseData: Course = {
     title: '',
     duration: 0,
-    maxParticipants: 0,
+    maxPartecipant: 0,
     areaId: '',
     courseType: '',
     payment: '',
@@ -36,7 +36,7 @@ export class AddCourseFormComponent implements OnInit {
     this.courseForm = this.formBuilder.group({
       title: ['', Validators.required],
       duration: [0, Validators.required],
-      maxParticipants: [0, Validators.required],
+      maxPartecipant: [0, Validators.required],
       areaId: ['', Validators.required],
       courseType: ['', Validators.required],
       payment: ['', Validators.required],

@@ -26,14 +26,14 @@ export class AllTeachersComponent {
           }
       });
   }
-  // deleteCourse(courseId: number) {
-  //     this.courseService.deleteCourse(courseId).subscribe({
-  //         next: () => {
-  //             this.fetchAllCourses();
-  //         },
-  //         error: (error) => {
-  //             console.error('Errore nell\'eliminazione del corso:', error);
-  //         }
-  //     });
-  // }
+  deleteTeacher(teacherId: number) {
+    this.teacherService.deleteTeacher(teacherId).subscribe({
+        next: () => {
+            this.fetchAllTeachers();
+        },
+        error: (error) => {
+            console.error('Errore nell\'eliminazione del corso:', error);
+        }
+    });
+}
 }

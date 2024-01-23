@@ -1,0 +1,76 @@
+<div class="container">
+   <h2 class="hover-effect">Aggiorna i dati del corso</h2>
+   <div class="row">
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/6822/6822288.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/9874/9874671.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/256/1945/1945655.png" alt="" class="hover-effect">
+     </div>
+   </div>
+ </div>
+ 
+ <form class="row g-3" (ngSubmit)="updateCourse()" [formGroup]="courseForm">
+   <div class="col-md-6">
+     <label for="title" class="form-label">Titolo</label>
+     <input type="text" id="title" class="form-control" formControlName="title">
+   </div>
+   <div class="col-md-6">
+     <label for="duration" class="form-label">Durata (in ore)</label>
+     <input type="number" id="duration" class="form-control" formControlName="duration">
+   </div>
+   <div class="col-md-6">
+     <label for="maxPartecipant" class="form-label">Numero massimo partecipanti</label>
+     <input type="number" id="maxPartecipant" class="form-control" formControlName="maxPartecipant">
+   </div>
+   <div class="col-md-6">
+     <label for="payment" class="form-label">Tipo di pagamento</label>
+     <select id="payment" class="form-select" formControlName="payment">
+      <option selected value="">Choose...</option>
+      <option value="FREE">FREE</option>
+      <option value="PERSONAL">PERSONAL</option>
+      <option value="COMPANY">COMPANY</option>
+      <option value="FINANCED">FINANCED</option>
+    </select>
+   </div>
+   <div class="col-md-6">
+     <label for="skillLevel" class="form-label">Livello di competenza</label>
+     <select id="skillLevel" class="form-select" formControlName="skillLevel">
+      <option selected value="">Choose...</option>
+      <option value="BASIC">BASIC</option>
+      <option value="INTERMEDIATE">INTERMEDIATE</option>
+      <option value="ADVANCED">ADVANCED</option>
+      <option value="GURU">GURU</option>
+    </select>
+   </div>
+   <div class="col-md-6">
+     <label for="area" class="form-label">Area</label>
+     <select class="form-select" id="area" formControlName="areaId">
+      <option *ngFor="let area of areas" [value]="area.id">{{ area.name }}</option>
+    </select>
+   </div>
+ 
+
+ 
+   <div class="col-12">
+     <button type="submit" class="btn btn-primary">AGGIORNA</button>
+   </div>
+ </form>
+ 
+ <div class="container">
+   <div class="row">
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/1640/1640642.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/256/5390/5390225.png" alt="" class="hover-effect">
+     </div>
+     <div class="col-sm">
+       <img src="https://cdn-icons-png.flaticon.com/512/6551/6551750.png" alt="" class="hover-effect">
+     </div>
+   </div>
+ </div>
+ 

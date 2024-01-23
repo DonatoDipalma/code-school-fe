@@ -21,6 +21,11 @@ export class EditionService {
       return this.http.get<Edition[]>(`${this.URL}/upcomingWithArea/${areaId}`);
     }
 
+    getEditionById(editionId: number): Observable<Edition> {
+      console.log("Sto nella service ricevuto: " + editionId);
+      return this.http.get<Edition>(`${this.URL}/${editionId}`);
+    }
+
     getEditionDetailsById(editionId: number): Observable<EditionDetailsDto> {
       console.log("Sto nella service ricevuto: " + editionId);
       return this.http.get<EditionDetailsDto>(`${this.URL}/${editionId}`);
@@ -44,4 +49,9 @@ export class EditionService {
     deleteTeacherByTeacherIdAndEditionModuleId(idTeacher: number, idModule: number){
       return this.http.delete(`${this.URL}/${idTeacher}/${idModule}`);
     }
+
+    updateEdition(editionId: number, editionData: Edition): Observable<any> {
+      const updateUrl = `${this.URL}/${editionId}`;
+      return this.http.put<any>(updateUrl, editionData);
+    }    
   }

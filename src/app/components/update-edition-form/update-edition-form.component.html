@@ -1,0 +1,50 @@
+<div class="container">
+  <h2 class="hover-effect">Aggiorna i dati dell'edizione</h2>
+  <form class="row g-3" (ngSubmit)="updateEdition()" [formGroup]="editionForm">
+
+    <div class="col-md-6">
+      <label for="combinedField" class="form-label">Nome Edizione</label>
+      <input type="text" id="combinedField" class="form-control" [value]="(editionForm.get('courseName')?.value || '') + ' ' + (editionForm.get('id')?.value || '')" [disabled]="true">
+    </div>
+
+    <div class="col-md-6">
+      <label for="roomName" class="form-label">Stanza</label>
+      <select id="roomName" class="form-select" formControlName="roomName">
+        <option selected value="">Scegli: </option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label for="startDate" class="form-label">Data di inizio</label>
+      <input type="date" id="startDate" class="form-control" formControlName="startDate">
+    </div>
+
+    <div class="col-md-6">
+      <label for="finishDate" class="form-label">Data di fine</label>
+      <input type="date" id="finishDate" class="form-control" formControlName="finishDate">
+    </div>
+
+    <div class="col-md-6">
+      <label for="tutor" class="form-label">Tutor</label>
+      <input type="text" id="tutor" class="form-control" formControlName="tutor">
+    </div>
+
+    <div class="col-md-6">
+      <label for="pay" class="form-label">Tipo di pagamento</label>
+      <select id="pay" class="form-select" formControlName="pay">
+        <option selected value="">Choose...</option>
+        <option value="FREE">FREE</option>
+        <option value="PERSONAL">PERSONAL</option>
+        <option value="COMPANY">COMPANY</option>
+        <option value="FINANCED">FINANCED</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">AGGIORNA</button>
+    </div>
+  </form>
+</div>

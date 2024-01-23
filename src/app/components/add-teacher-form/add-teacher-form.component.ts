@@ -13,6 +13,7 @@ export class AddTeacherFormComponent {
   teacherForm!: FormGroup;
   
   teacherData: Teacher = {
+    id: 0,
     firstname: '',
     lastname: '',
     bio: '',
@@ -20,7 +21,6 @@ export class AddTeacherFormComponent {
     nickname: '',
     professionalExperience: '',
     teacherLevel: '',
-    id: 0,
     imgName: ''
   };
 
@@ -37,27 +37,28 @@ export class AddTeacherFormComponent {
       bio: ['', Validators.required],
       begunTeaching: ['', Validators.required],
       nickname: ['', Validators.required],
+      imgName:['', Validators.required],
       professionalExperience: ['', Validators.required],
       teacherLevel: ['', Validators.required]
     });
+  }
 
-  
-  // createNewTeacher() {
-  //   if (this.teacherForm.valid) {
-  //     this.teacherData = { ...this.teacherForm.value };
-  //     this.teacherService.createTeacher(this.teacherData).subscribe({
-  //       next: ts => {
-  //         this.router.navigate(['/success-add-course-form']);
-  //       },
-  //       error: error => {
-  //         console.error('Errore durante la creazione del corso:', error);
-  //       }
-  //     });
+  createNewTeacher() {
+    if (this.teacherForm.valid) {
+      this.teacherData = { ...this.teacherForm.value };
+      this.teacherService.createTeacher(this.teacherData).subscribe({
+        next: ts => {
+          this.router.navigate(['/success-add-teacher-form']);
+        },
+        error: error => {
+          console.error('Errore durante la creazione del corso:', error);
+        }
+      });
       
-  //   } else {
-  //     console.error('Form non valido.');
-  //   }
-  // }
+    } else {
+      console.error('Form non valido.');
+    }
+  }
 }
 
-}
+
