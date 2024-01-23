@@ -2,7 +2,7 @@ export interface Course {
   id?: number;
   title: string;
   duration: number;
-  maxParticipants: number;
+  maxPartecipants: number;
   areaId: string;
   courseType: string;
   payment: string;

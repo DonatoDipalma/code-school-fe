@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EditionDetailsDto } from 'src/model/dtos/edition-details';
-import { TeacherSummaryDto } from 'src/model/dtos/teachers-summary';
 import { EditionService } from 'src/services/edition/edition.service';
 import { TeachersService } from 'src/services/teachers/teachers.service';
 

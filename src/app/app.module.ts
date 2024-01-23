@@ -23,7 +23,7 @@ import { SuccessAddEditionFormComponent } from './components/success-add-edition
 import { EditionsComponent } from './components/editions/editions.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
-import { DetailsCourseComponent } from './details-course/details-course.component';
+import { DetailsCourseComponent } from './components/details-course/details-course.component';
 
 @NgModule({
   declarations: [

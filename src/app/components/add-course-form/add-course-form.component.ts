@@ -18,7 +18,7 @@ export class AddCourseFormComponent implements OnInit {
   courseData: Course = {
     title: '',
     duration: 0,
-    maxParticipants: 0,
+    maxPartecipants: 0,
     areaId: '',
     courseType: '',
     payment: '',
