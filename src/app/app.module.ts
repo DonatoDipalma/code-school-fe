@@ -31,6 +31,9 @@ import { DetailsTeacherComponent } from './components/details-teacher/details-te
 import { UpdateTeacherFormComponent } from './components/update-teacher-form/update-teacher-form.component';
 import { UpdateCourseFormComponent } from './components/update-course-form/update-course-form.component';
 import { UpdateEditionFormComponent } from './components/update-edition-form/update-edition-form.component';
+import { CardStudentDetailsEditionComponent } from './components/card-student-details-edition/card-student-details-edition.component';
+import { CardTeacherDetailsEditionComponent } from './components/card-teacher-details-edition/card-teacher-details-edition.component';
+import { CardDetailsEditionComponent } from './components/card-details-edition/card-details-edition.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { UpdateEditionFormComponent } from './components/update-edition-form/upd
     DetailsTeacherComponent,
     UpdateTeacherFormComponent,
     UpdateCourseFormComponent,
-    UpdateEditionFormComponent
+    UpdateEditionFormComponent,
+    CardStudentDetailsEditionComponent,
+    CardTeacherDetailsEditionComponent,
+    CardDetailsEditionComponent
   ],
   imports: [
     BrowserModule,
