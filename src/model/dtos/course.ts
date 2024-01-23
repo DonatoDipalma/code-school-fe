@@ -3,7 +3,7 @@ export interface Course {
   title: string;
   duration: number;
   maxParticipants: number;
-  areaId: string;
+  areaId: number;
   courseType: string;
   payment: string;
   skillLevel: string;

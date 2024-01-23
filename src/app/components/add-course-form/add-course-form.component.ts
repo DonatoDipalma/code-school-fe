@@ -19,7 +19,7 @@ export class AddCourseFormComponent implements OnInit {
     title: '',
     duration: 0,
     maxParticipants: 0,
-    areaId: '',
+    areaId: 0,
     courseType: '',
     payment: '',
     skillLevel: ''

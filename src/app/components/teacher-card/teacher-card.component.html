@@ -14,6 +14,10 @@
         <h5>Titolo</h5>
         <p>Developer {{ teach?.teacherLevel }}</p>
     </section>
+    <section *ngIf="teach?.avgRating">
+        <h5>Valutazione Media</h5>
+        <p>{{ teach?.avgRating }}</p>
+    </section>
     <section>
         <button (click)="chooseTeacher()">Favourite Teacher</button>
     </section>

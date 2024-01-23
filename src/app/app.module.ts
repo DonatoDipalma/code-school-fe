@@ -23,6 +23,10 @@ import { SuccessAddEditionFormComponent } from './components/success-add-edition
 import { EditionsComponent } from './components/editions/editions.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
+import { CourseDetailsComponent } from './components/courses/course-details/course-details.component';
+import { AddTeacherComponent } from './components/add-teacher/add-teacher.component';
+import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';
+import { TeacherRoomComponent } from './components/teacher-room/teacher-room.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-m
     SuccessAddEditionFormComponent,
     EditionsComponent,
     SigninComponent,
-    AssignTeacherToModuleComponent
+    AssignTeacherToModuleComponent,
+    CourseDetailsComponent,
+    AddTeacherComponent,
+    SuccessAddTeacherFormComponent,
+    TeacherRoomComponent
   ],
   imports: [
     BrowserModule,

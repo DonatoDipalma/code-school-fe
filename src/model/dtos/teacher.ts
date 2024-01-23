@@ -7,5 +7,6 @@ export interface Teacher{
     nickname: string,
     professionalExperience: string,
     imgName: string,
+    avgRating: number,
     teacherLevel: string
 }

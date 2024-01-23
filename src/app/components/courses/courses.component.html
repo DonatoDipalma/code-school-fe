@@ -28,7 +28,7 @@
           <tbody>
             <tr *ngFor="let c of allCourses">
               <td>{{ c.id }}</td>
-              <td>{{ c.title }}</td>
+              <td><a [routerLink]="['/courses', c.id]">{{ c.title }}</a></td>
               <td>{{ c.duration }}</td>
               <td>{{ c.courseType }}</td>
               <td>
