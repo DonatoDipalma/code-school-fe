@@ -28,6 +28,7 @@ import { AddTeacherFormComponent } from './components/add-teacher-form/add-teach
 import { MaintenanceComponent } from './components/maintenance/maintenance.component';
 import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';
 import { DetailsCourseComponent } from './components/details-course/details-course.component';
+import { EnrolledStudentsForEditionComponent } from './components/enrolled-students-for-edition/enrolled-students-for-edition.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { DetailsCourseComponent } from './components/details-course/details-cour
     AddTeacherFormComponent,
     MaintenanceComponent,
     SuccessAddTeacherFormComponent,
-    DetailsCourseComponent
+    DetailsCourseComponent,
+    EnrolledStudentsForEditionComponent
   ],
   imports: [
     BrowserModule,

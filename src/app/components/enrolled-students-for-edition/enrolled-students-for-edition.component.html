@@ -1,0 +1,36 @@
+<div class="container">
+    <h1 class="hover-effect">Studenti già iscritti:</h1>
+</div>
+  
+  <div class="table-container">     
+        <table class="table table-hover custom-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NOME</th>
+              <th>COGNOME</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of students">
+              <td>{{ s.id }}</td>
+              <td>{{ s.firstname }}</td>
+              <td>{{ s.lastname }}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/4696/4696777.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/405/405719.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/2643/2643534.png" alt="" class="hover-effect">
+      </div>
+    </div>
+  </div>
