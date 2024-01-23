@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Teacher } from "src/model/dtos/teacher";
 import { TeacherCompetenceDto } from "src/model/dtos/teacher-competence";
+import { TeacherFormData } from "src/model/dtos/teacher-form";
 import { TeacherSummaryDto } from "src/model/dtos/teachers-summary";
 @Injectable({
     providedIn : "root"
@@ -35,4 +36,12 @@ export class TeachersService{
         return this.http.post<void>(`${this.TEACHER_ASSIGNMENT_URL}/${moduleId}/teacher`,
           { moduleId, teacherId });
       }      
+    
+    getAllTeachers(): Observable<Teacher[]>{
+        return this.http.get<Teacher[]>(`${this.URL}/three-teachers`);
+    }
+
+    addNewTeacher(teacherData: TeacherFormData): Observable<any>{
+        return this.http.post<any>(`${this.URL}/`, teacherData);
+    }
 }

@@ -57,7 +57,6 @@ import { EditionService } from 'src/services/edition/edition.service';
     getAllCourses(){
       this.courseService.getAllCourses().subscribe({
         next: c => this.courses = c
-
       })
     }
 
