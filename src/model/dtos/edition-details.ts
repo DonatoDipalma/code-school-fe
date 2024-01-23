@@ -1,3 +1,4 @@
+import { Student } from "./student";
 import { Teacher } from "./teacher";
 import { TeacherAssignmentDto } from "./teacher-assignment";
 import { TeacherSummaryDto } from "./teachers-summary";
@@ -14,5 +15,5 @@ export interface EditionDetailsDto {
    duration: number;
    subjects: string[]; 
    freePlaces?: number;
-   teachers: TeacherAssignmentDto[]; 
+   teachers: TeacherAssignmentDto[];
 }
