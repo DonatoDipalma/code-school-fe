@@ -7,5 +7,4 @@ export interface TeacherFormData {
     begunTeaching: Date,
     nickname: string,
     professionalExperience: string
-
 }

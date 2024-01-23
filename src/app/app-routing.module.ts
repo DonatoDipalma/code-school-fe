@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'editions/:editionId/:moduleId', component: AssignTeacherToModuleComponent },
   { path: 'courses/:courseId', component: DetailsCourseComponent},
   { path: 'teachers', component: Teachers},
-  { path: 'teachers/new', component: AddTeacherFormComponent}
+  { path: 'teachers/add-teacher-form', component: AddTeacherFormComponent}
 ];
 
 @NgModule({

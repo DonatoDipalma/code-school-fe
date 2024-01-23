@@ -32,19 +32,19 @@ export class AddTeacherFormComponent implements OnInit{
   ngOnInit(): void {
     this.teacherForm = this.formBuilder.group({
       firstname: ['', Validators.required],
-    lastname: ['', Validators.required],
-    bio: ['', Validators.required],
-    nickname: ['', Validators.required],
-    professionalExperience: ['', Validators.required],
-    begunTeaching: ['', Validators.required],
-    fiscalCode: ['', Validators.required],
-    email: ['', Validators.required],
+      lastname: ['', Validators.required],
+      bio: ['', Validators.required],
+      nickname: ['', Validators.required],
+      professionalExperience: ['', Validators.required],
+      begunTeaching: ['', Validators.required],
+      fiscalCode: ['', Validators.required],
+      email: ['', Validators.required],
     })
   }
   createNewTeacher(){
     if(this.teacherForm.valid){
       this.teacherData = {...this.teacherForm.value};
-      this.teacherService.addNewTeacher(this.teacherData).subscribe({
+      this.teacherService.addNewTeacher(this.teacherData).subscribe({        
         next: t => {
           this.router.navigate(['/success-add-course-form']);
         },

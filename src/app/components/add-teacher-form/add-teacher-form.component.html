@@ -1,3 +1,67 @@
 <div class="container">
-<h3>Registra un nuovo docente</h3>
+<form (ngSubmit)="createNewTeacher()" [formGroup]="teacherForm">
+    <div class="row">
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+            <input type="text" id="name" class="form-control" formControlName="firstname" />
+            <label class="form-label" for="name">Name</label><br>
+            <span class="error" style="font-size: 12px; color: red;">Campo obbligatorio</span>
+            </div>
+        </div>
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+            <input type="text" id="cognome" class="form-control" formControlName="lastname"/>
+            <label class="form-label" for="Cognome">Cognome</label><br>
+            <span class="error" style="font-size: 12px; color: red;">Campo obbligatorio</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+            <input type="email" id="email" class="form-control" formControlName="email"/>
+            <label class="form-label" for="email">Email</label><br>
+            <span class="error" style="font-size: 12px; color: red;">Campo obbligatorio</span>
+            </div>
+        </div>
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+            <input type="text" id="fiscalCode" class="form-control" formControlName="fiscalCode"/>
+            <label class="form-label" for="FiscalCode">Fiscal Code</label><br>
+            <span class="error" style="font-size: 12px; color: red;">Campo obbligatorio</span>
+            </div>
+        </div>
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+            <input type="date" id="begunTeaching" class="form-control" formControlName="begunTeaching"/>
+            <label class="form-label" for="BegunTeaching">Begun Teaching</label><br>
+            <span class="error" style="font-size: 12px; color: red;">Campo obbligatorio</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+            <input type="text" id="nickname" class="form-control" formControlName="nickname"/>
+            <label class="form-label" for="form8Example3">Nickname</label><br>
+            <span class="error" style="font-size: 12px; color: red;">Campo obbligatorio</span>
+            </div>
+        </div>
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+            <input type="text" id="professionalExperience" class="form-control" formControlName="professionalExperience"/>
+            <label class="form-label" for="form8Example3">Professional Experience</label><br>
+            <span class="error" style="font-size: 12px; color: red;">Campo obbligatorio</span>
+            </div>
+        </div>
+        <div class="col">
+            <div data-mdb-input-init class="form-outline">
+            <input type="text" id="bio" class="form-control" formControlName="bio"/>
+            <label class="form-label" for="form8Example3">Bio</label><br>
+            <span class="error" style="font-size: 12px; color: red;">Campo obbligatorio</span>
+            </div>
+        </div>
+    </div>
+</form>
+<button type="submit" class="btn btn-primary">Crea</button>
 </div>
