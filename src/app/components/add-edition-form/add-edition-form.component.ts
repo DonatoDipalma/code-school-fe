@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AddEdition } from 'src/model/dtos/add-edition';
 import { Course } from 'src/model/dtos/course';
 import { Edition } from 'src/model/dtos/edition';
@@ -30,15 +30,20 @@ import { EditionService } from 'src/services/edition/edition.service';
     constructor(
       private formBuilder: FormBuilder,
       private router: Router,
+      private activeRoute: ActivatedRoute,
       private courseService: CourseService,
       private editionService: EditionService
     ) {}
-  
+    
     ngOnInit(): void {
+      this.buildFullForm();
+    }
       
+    buildFullForm(){
+      const courseId = this.activeRoute.snapshot.queryParams['courseId'];
       this.getAllCourses();
       this.editionForm = this.formBuilder.group({
-        idCourse: ['', Validators.required],
+        idCourse: [courseId ? +courseId : '', Validators.required],
         idRoom: [1],
         startDate: ['', Validators.required],
         finishDate: ['', Validators.required],

@@ -28,6 +28,7 @@ export class DetailsCourseComponent implements OnInit {
     this.courseService.getCourseDetails(this.courseId).subscribe({
       next: c => {
         this.courseDetails = c;
+        console.log(this.courseDetails);
       },
       error: err => {
         console.error(err);

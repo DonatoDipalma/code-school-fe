@@ -6,7 +6,7 @@
           <tr>
             <th>Title</th>
             <th>Duration</th>
-            <th>Max Participants</th>
+            <th>Max Partecipants</th>
             <th>Payment</th>
             <th>Skill Level</th>
           </tr>
@@ -23,4 +23,8 @@
       </table>
     </div>
   </div>
+</div>
+<div class="container mt-5">
+  <a [routerLink]="['/courses']" class="btn btn-primary">Torna ai Corsi</a>
+  <a [routerLink]="['/add-edition-form']" [queryParams]="{'courseId': courseDetails.id}" class="btn btn-primary">Crea una nuova edizione</a>
 </div>
