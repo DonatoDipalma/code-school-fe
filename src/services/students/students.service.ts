@@ -12,6 +12,6 @@ export class StudentsService{
     }
 
     getAllStudentsOfEdition(editionId : number): Observable<Student[]> {
-        return this.http.get<Student[]>(`${this.URL}/${editionId}`);
+        return this.http.get<Student[]>(`${this.URL}/enrolled/${editionId}`);
     }
 }
