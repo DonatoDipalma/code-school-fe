@@ -30,6 +30,7 @@ import { EditionService } from 'src/services/edition/edition.service';
     constructor(
       private formBuilder: FormBuilder,
       private router: Router,
+      private activeRoute: ActivatedRoute,
       private courseService: CourseService,
       private editionService: EditionService
     ) {}
@@ -39,9 +40,10 @@ import { EditionService } from 'src/services/edition/edition.service';
     }
 
     buildFullForm() {
+      const courseId = this.activeRoute.snapshot.queryParams['courseId'];
       this.getAllCourses();
       this.editionForm = this.formBuilder.group({
-        idCourse: ['', Validators.required],
+        idCourse: [courseId ? +courseId : '', Validators.required],
         idRoom: [1],
         startDate: ['', Validators.required],
         finishDate: ['', Validators.required],

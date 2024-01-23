@@ -29,6 +29,6 @@
       </div>
       <div class="card-footer">
         <a [routerLink]="['/courses']" class="btn btn-primary">Back</a>
-        <a [routerLink]="['/add-edition-form']" class="btn btn-primary">Crea una nuova edizione</a>
+        <a [routerLink]="['/add-edition-form']" [queryParams]="{'courseId': courseDetails.id}" class="btn btn-primary">Crea una nuova edizione</a>
       </div>
     </div>
