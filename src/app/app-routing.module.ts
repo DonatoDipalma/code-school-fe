@@ -19,6 +19,7 @@ import { DetailsCourseComponent } from './components/details-course/details-cour
 import { TeacherCardComponent } from './components/teacher-card/teacher-card.component';
 import { Teachers } from './components/teachers/teachers.component';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
+import { TeachersListComponent } from './components/teachers-list/teachers-list.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'courses', component: CoursesComponent },
@@ -34,7 +35,7 @@ const routes: Routes = [
   { path: 'success-add-course-form', component: SuccessAddCourseFormComponent },
   { path: 'editions/:editionId/:moduleId', component: AssignTeacherToModuleComponent },
   { path: 'courses/:courseId', component: DetailsCourseComponent},
-  { path: 'teachers', component: Teachers},
+  { path: 'teachers', component: TeachersListComponent},
   { path: 'teachers/add-teacher-form', component: AddTeacherFormComponent}
 ];
 

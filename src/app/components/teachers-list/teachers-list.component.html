@@ -1,0 +1,60 @@
+<div class="container">
+    <h1 class="hover-effect">Tutti i teachers disponibili:</h1>
+    <div class="row">
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/5278/5278681.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/3352/3352681.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910637.png" alt="" class="hover-effect">
+      </div>
+    </div>
+  </div>
+  
+  <div class="table-container">     
+        <table class="table table-hover custom-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>TITOLO</th>
+              <th>DURATA</th>
+              <th>TIPOLOGIA</th>
+              <th>EDIZIONE</th>
+              <th>AZIONI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of teachers">
+              <td>{{ c.id }}</td>
+              <td>{{ c.firstname }}</td>
+              <td>{{ c.lastname }}</td>
+              <td>{{ c.nickname }}</td>
+              <td>
+                <a></a>
+              </td>
+              <td>
+              <button class="btn btn-primary hover-effect small-btn" (click)="deleteTeacher(c.id!)"><i class="bi bi-trash"></i></button>
+              <button class="btn btn-primary hover-effect small-btn" [routerLink]="['/courses', c.id!]" routerLinkActive="active"><i class="bi bi-zoom-in"></i></button>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/4696/4696777.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/405/405719.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/2643/2643534.png" alt="" class="hover-effect">
+      </div>
+    </div>
+    <a class="btn btn-primary hover-effect" routerLink="add-teacher-form" routerLinkActive="active">Crea nuovo teacher</a>
+  </div>
+
