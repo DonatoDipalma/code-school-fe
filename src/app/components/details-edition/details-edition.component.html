@@ -1,6 +1,7 @@
-<app-card-details-edition></app-card-details-edition>
-<app-card-student-details-edition></app-card-student-details-edition>
-<app-card-teacher-details-edition></app-card-teacher-details-edition>
-  
+
+<app-card-details-edition [editionDetails]="editionDetails"></app-card-details-edition>
+<app-card-student-details-edition [student]="students"></app-card-student-details-edition>
+<app-card-teacher-details-edition [editionId]="editionId" [teacherDetails]="editionDetails" (deleteTeacher)="onDeleteTeacher($event)"></app-card-teacher-details-edition>
+
       
         

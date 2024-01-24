@@ -7,7 +7,7 @@
           <h4> Modulo: <br>{{t.moduleTitle}}</h4>
           <div *ngIf="t.teacherSummary.id">
             <img [src]="'/assets/img/teach_icons/' + t.teacherSummary.imgName" alt="">
-            <button class="btn btn-primary" (click)="deleteTeacher(t.moduleId,t.teacherSummary.id)"><i class="bi bi-trash"></i></button>
+            <button class="btn btn-primary" (click)="onDeleteTeacher(t.moduleId,t.teacherSummary.id)"><i class="bi bi-trash"></i></button>
           </div>
           <div *ngIf="!t.teacherSummary.id">
             <button class="btn btn-primary" [routerLink] = "['/editions', this.editionId, t.moduleId]"> Assegna teacher </button>

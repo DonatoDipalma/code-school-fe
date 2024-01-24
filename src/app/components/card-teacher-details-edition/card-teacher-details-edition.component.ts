@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EditionDetailsDto } from 'src/model/dtos/edition-details';
 import { Student } from 'src/model/dtos/student';
@@ -12,46 +12,18 @@ import { TeachersService } from 'src/services/teachers/teachers.service';
   templateUrl: './card-teacher-details-edition.component.html',
   styleUrls: ['./card-teacher-details-edition.component.css']
 })
-export class CardTeacherDetailsEditionComponent implements OnInit{
+export class CardTeacherDetailsEditionComponent implements OnInit {
+  @Input('teacherDetails') editionDetails!: EditionDetailsDto;
+  @Input('editionId') editionId!: number;
+  @Output('deleteTeacher') deleteTeacher = new EventEmitter<{ idEditionModule: number, idTeacher: number }>();
 
-  editionDetails!: EditionDetailsDto;
   teachersEmpty = true;
-  editionId!: number;
-
-  constructor(
-    private route: ActivatedRoute,
-    private editionService: EditionService
-  ) {}
 
   ngOnInit(): void {
-    this.editionId = this.route.snapshot.params['editionId']; 
-    this.loadEditionDetails();
   }
 
-  loadEditionDetails(){
-    this.editionService.getEditionDetailsById(this.editionId).subscribe({
-      next: edt => {
-        this.editionDetails = edt;
-        console.log(this.editionDetails);
-      },
-      error: err => {
-        console.error('Errore nel recupero dei dettagli dell\'edizione:', err);
-      }
-  });
+  onDeleteTeacher(idEditionModule: number, idTeacher: number) {
+    this.deleteTeacher.emit({ idEditionModule, idTeacher });
   }
-
-  deleteTeacher(idEditionModule: number, idTeacher: number){
-    this.editionService.deleteTeacherByTeacherIdAndEditionModuleId(idTeacher, idEditionModule).subscribe({
-      next:(em => {
-        alert("Docenza annullata");
-        this.loadEditionDetails();
-      }),
-      error: err => {
-        alert("Errore " + err);
-        console.log(err);
-      }
-    });
-  }
-
-  
 }
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EditionDetailsDto } from 'src/model/dtos/edition-details';
 import { Student } from 'src/model/dtos/student';
@@ -13,32 +13,11 @@ import { TeachersService } from 'src/services/teachers/teachers.service';
   templateUrl: './card-student-details-edition.component.html',
   styleUrls: ['./card-student-details-edition.component.css']
 })
-export class CardStudentDetailsEditionComponent implements OnInit {
-  editionId!: number;
-  teachersEmpty = true;
-  students!: Student[];
-
-  constructor(
-    private route: ActivatedRoute,
-    private editionService: EditionService,
-    private studentService: StudentService
-  ) {}
+export class CardStudentDetailsEditionComponent {
+  @Input('student') students!: Student[];
 
   ngOnInit(): void {
-    this.editionId = this.route.snapshot.params['editionId']; 
-    this.loadEnrolledStudent();
+   
   }
-
-  loadEnrolledStudent(){
-    this.studentService.getEnrolledStudentByEditionId(this.editionId).subscribe({
-      next: edt => {
-        this.students = edt;
-      },
-      error: err => {
-        console.error('Errore nel recupero dei dettagli dell\'edizione:', err);
-      }
-  });
-  }
-
 }  
 
