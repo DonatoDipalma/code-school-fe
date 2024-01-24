@@ -1,10 +1,8 @@
-
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Teacher } from "src/model/dtos/teacher";
 import { TeacherCompetenceDto } from "src/model/dtos/teacher-competence";
-import { TeacherSummaryDto } from "src/model/dtos/teachers-summary";
 @Injectable({
     providedIn : "root"
 })

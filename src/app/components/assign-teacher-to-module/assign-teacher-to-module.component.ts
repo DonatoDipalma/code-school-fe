@@ -3,10 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Area } from 'src/model/dtos/area';
 import { Skill } from 'src/model/dtos/skill';
-import { Teacher } from 'src/model/dtos/teacher';
-import { TeacherAssignmentDto } from 'src/model/dtos/teacher-assignment';
 import { TeacherCompetenceDto } from 'src/model/dtos/teacher-competence';
-import { TeacherSummaryDto } from 'src/model/dtos/teachers-summary';
 import { CompetenceService } from 'src/services/area/competence.service';
 import { TeachersService } from 'src/services/teachers/teachers.service';
 

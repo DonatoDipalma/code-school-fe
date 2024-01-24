@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Edition } from 'src/model/dtos/edition';
-import { EditionDetailsDto } from 'src/model/dtos/edition-details';
 import { EditionService } from 'src/services/edition/edition.service';
 
 @Component({

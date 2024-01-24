@@ -1,12 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EditionDetailsDto } from 'src/model/dtos/edition-details';
+import { Component, Input } from '@angular/core';
 import { Student } from 'src/model/dtos/student';
-import { TeacherSummaryDto } from 'src/model/dtos/teachers-summary';
-import { EditionService } from 'src/services/edition/edition.service';
-import { StudentService } from 'src/services/student/student.service';
-import { TeachersService } from 'src/services/teachers/teachers.service';
-
 
 @Component({
   selector: 'app-card-student-details-edition',
@@ -17,7 +10,7 @@ export class CardStudentDetailsEditionComponent {
   @Input('student') students!: Student[];
 
   ngOnInit(): void {
-   
   }
+  
 }  
 

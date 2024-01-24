@@ -1,8 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { EditionDetailsDto } from 'src/model/dtos/edition-details';
-import { EditionService } from 'src/services/edition/edition.service';
-
 
 @Component({
   selector: 'app-card-details-edition',

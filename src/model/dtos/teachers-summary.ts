@@ -1,4 +1,3 @@
-
 export interface TeacherSummaryDto{
    id: number,
    firstname: string,
