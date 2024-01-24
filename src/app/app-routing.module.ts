@@ -13,7 +13,7 @@ import { AddEditionFormComponent } from './components/add-edition-form/add-editi
 import { SuccessAddEditionFormComponent } from './components/success-add-edition-form/success-add-edition-form.component';
 import { EditionsComponent } from './components/editions/editions.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
+import { AssignTeacherToModuleComponent } from './components/details-edition/assign-teacher-to-module/assign-teacher-to-module.component';
 import { AllTeachersComponent } from './components/all-teachers/all-teachers.component';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';

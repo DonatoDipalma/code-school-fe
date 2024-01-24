@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Teacher } from 'src/model/dtos/teacher';
 import { TeachersService } from 'src/services/teachers/teachers.service';
 
@@ -10,7 +11,7 @@ import { TeachersService } from 'src/services/teachers/teachers.service';
 export class AllTeachersComponent {
   allTeacher: Teacher[] = [];
 
-  constructor(private teacherService: TeachersService){}
+  constructor(private teacherService: TeachersService, private route: ActivatedRoute){}
 
   ngOnInit(){
       this.fetchAllTeachers();
@@ -26,6 +27,7 @@ export class AllTeachersComponent {
           }
       });
   }
+
   deleteTeacher(teacherId: number) {
     this.teacherService.deleteTeacher(teacherId).subscribe({
         next: () => {

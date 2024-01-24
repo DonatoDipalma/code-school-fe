@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Teacher } from 'src/model/dtos/teacher';
 import { TeachersService } from 'src/services/teachers/teachers.service';
@@ -6,9 +6,9 @@ import { TeachersService } from 'src/services/teachers/teachers.service';
 @Component({
   selector: 'app-details-teacher',
   templateUrl: './details-teacher.component.html',
-  styleUrls: ['./details-teacher.component.css']
+  styleUrls: ['./details-teacher.component.css'],
 })
-export class DetailsTeacherComponent {
+export class DetailsTeacherComponent implements OnInit {
   teacherDetails!: Teacher;
   teacherId!: number;
 
@@ -18,18 +18,18 @@ export class DetailsTeacherComponent {
   ) {}
 
   ngOnInit(): void {
-    this.teacherId = this.route.snapshot.params['teacherId']; 
-    this.loadTeacherDetails();
+    this.loadDetailsTeacher();
   }
-
-  loadTeacherDetails(){
+  loadDetailsTeacher() {
+    this.teacherId = this.route.snapshot.params['teacherId'];
     this.teacherService.getTeacherDetailsById(this.teacherId).subscribe({
-      next: det => {
+      next: (det) => {
         this.teacherDetails = det;
+        console.log('ok');
       },
-      error: err => {
-        console.error('Errore nel recupero dei dettagli dei corsi:', err);
-      }
-  });
+      error: (err) => {
+        console.log('Errore nel recupero dei dettagli dei corsi:', err);
+      },
+    });
   }
 }

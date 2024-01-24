@@ -1,10 +1,12 @@
 <div class="text-center">
   <button class="btn btn-primary-back hover-effect" (click)="goToUpcomingEditions()">Vai alle edizioni in partenza</button>
 </div>
+
 <h1 class="hover-effect">Tutte le Edizioni:</h1>
+
 <div id="form-container">
   <form [formGroup]="areaForm">
-    <select title="seleziona un'area" formControlName="areaIdForm" id="area" class="form-select" (change)="filterAreas()">
+    <select title="Seleziona un'area" formControlName="areaIdForm" id="area" class="form-select" (change)="filterAreas()">
       <option [ngValue]="null" selected>Tutte le aree</option>
       <option *ngFor="let a of areas" [ngValue]="a.id">{{a.id}}</option>
     </select>    
@@ -36,30 +38,24 @@
         <i class="bi bi-person"></i>{{edition?.tutor}}<br></p>
       <p class="card-text-pay">
         {{edition?.pay}}</p>
-        <p class="card-text-edition">Edizione {{edition.id}}</p>
+      <p class="card-text-edition">Edizione {{edition.id}}</p>
 
-        <div class="buttons">
-      <button [routerLink]="['/editions', edition.id]" class="btn btn-primary"><i class="bi bi-info-square-fill"></i></button>
-      <button class="btn btn-primary" (click)="deleteEdition(edition.id)"><i class="bi bi-trash"></i></button>
-      <button class="btn btn-primary hover-effect small-btn-bin" [routerLink]="['/update-edition-form', edition.id]">
-        <i class="bi bi-arrow-clockwise"></i>
-      </button>
+      <div class="buttons">
+        <button [routerLink]="['/editions', edition.id]" class="btn btn-primary"><i class="bi bi-info-square-fill"></i></button>
+        <button class="btn btn-primary" (click)="deleteEdition(edition.id)"><i class="bi bi-trash"></i></button>
+        <button class="btn btn-primary hover-effect small-btn-bin" [routerLink]="['/update-edition-form', edition.id]">
+          <i class="bi bi-arrow-clockwise"></i>
+        </button>
+      </div>
     </div>
   </div>
-  </div>
+  <div class="card" style="width: 15rem;">
+    <div class="card-body text-center">
+      <h5 class="card-title">
+        <a routerLink="/add-edition-form" routerLinkActive="active" class="d-block">
+          <i class="bi bi-plus-square"></i><br>Crea nuova Edizione
+        </a>
+      </h5>
+    </div>
 </div>
 
-<div class="container1" style="margin-top: 15px;">
-  <div class="row">
-    <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/1296/1296693.png" alt="" class="hover-effect">
-    </div>
-    <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159172.png" alt="" class="hover-effect">
-    </div>
-    <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/9727/9727439.png" alt="" class="hover-effect">
-    </div>
-  </div>
-  <a class="btn btn-primary-create hover-effect" routerLink="/add-edition-form" routerLinkActive="active">Crea nuova edizione</a>
-</div>

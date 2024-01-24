@@ -13,7 +13,7 @@
       <img src="https://cdn-icons-png.flaticon.com/512/2620/2620490.png" alt="" class="hover-effect">
     </div>
   </div>
-</div>
+
 
 <div class="container">
   <div class="card" style="width: 15rem;" *ngFor="let t of allTeacher">
@@ -40,20 +40,13 @@
   </div>
 </div>
 
-<div class="container1" style="margin-top: 15px;">
-  <div class="row">
-    <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/1296/1296693.png" alt="" class="hover-effect">
-    </div>
-    <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159172.png" alt="" class="hover-effect">
-    </div>
-    <div class="col-sm">
-      <img src="https://cdn-icons-png.flaticon.com/512/9727/9727439.png" alt="" class="hover-effect">
-    </div>
+
+<div class="card" style="width: 15rem;">
+  <div class="card-body text-center">
+    <h5 class="card-title">
+      <a routerLink="/add-teacher-form" routerLinkActive="active" class="d-block">
+        <i class="bi bi-plus-square"></i><br>Crea nuovo Teacher
+      </a>
+    </h5>
   </div>
-  <a class="btn btn-primary-create hover-effect" routerLink="/add-teacher-form" routerLinkActive="active">Crea nuovo Teacher</a>
 </div>
-
-
-

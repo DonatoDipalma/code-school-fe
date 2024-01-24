@@ -22,7 +22,7 @@ import { AddEditionFormComponent } from './components/add-edition-form/add-editi
 import { SuccessAddEditionFormComponent } from './components/success-add-edition-form/success-add-edition-form.component';
 import { EditionsComponent } from './components/editions/editions.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
+import { AssignTeacherToModuleComponent } from './components/details-edition/assign-teacher-to-module/assign-teacher-to-module.component';
 import { AllTeachersComponent } from './components/all-teachers/all-teachers.component';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';
@@ -31,9 +31,9 @@ import { DetailsTeacherComponent } from './components/details-teacher/details-te
 import { UpdateTeacherFormComponent } from './components/update-teacher-form/update-teacher-form.component';
 import { UpdateCourseFormComponent } from './components/update-course-form/update-course-form.component';
 import { UpdateEditionFormComponent } from './components/update-edition-form/update-edition-form.component';
-import { CardStudentDetailsEditionComponent } from './components/card-student-details-edition/card-student-details-edition.component';
-import { CardTeacherDetailsEditionComponent } from './components/card-teacher-details-edition/card-teacher-details-edition.component';
-import { CardDetailsEditionComponent } from './components/card-details-edition/card-details-edition.component';
+import { CardStudentDetailsEditionComponent } from './components/details-edition/card-student-details-edition/card-student-details-edition.component';
+import { CardTeacherDetailsEditionComponent } from './components/details-edition/card-teacher-details-edition/card-teacher-details-edition.component';
+import { CardDetailsEditionComponent } from './components/details-edition/card-details-edition/card-details-edition.component';
 
 @NgModule({
   declarations: [
