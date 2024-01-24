@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EditionDetailsDto } from 'src/model/dtos/edition-details';
-import { TeacherSummaryDto } from 'src/model/dtos/teachers-summary';
+import { Student } from 'src/model/dtos/student';
 import { EditionService } from 'src/services/edition/edition.service';
+import { StudentsService } from 'src/services/students/students.service';
 import { TeachersService } from 'src/services/teachers/teachers.service';
 
 @Component({
@@ -15,16 +16,19 @@ export class DetailsEditionComponent implements OnInit {
   editionDetails!: EditionDetailsDto;
   teachersEmpty = true;
   editionId!: number;
+  students: Student[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private teachersService: TeachersService,
-    private editionService: EditionService
+    private editionService: EditionService,
+    private studentService : StudentsService
   ) {}
 
   ngOnInit(): void {
     this.editionId = this.route.snapshot.params['editionId']; 
     this.loadEditionDetails();
+    this.loadStudentList();
   }
 
   loadEditionDetails(){
@@ -37,6 +41,16 @@ export class DetailsEditionComponent implements OnInit {
         console.error('Errore nel recupero dei dettagli dell\'edizione:', err);
       }
   });
+  }
+  loadStudentList(){
+    this.editionId = this.route.snapshot.params['editionId'];
+    this.studentService.getAllStudentsOfEdition(this.editionId).subscribe({
+        next: ts => {
+            this.students = ts;
+            console.log(this.students);
+        },
+        error: err => console.error("Errore", err)
+    });
   }
 
   deleteTeacher(idEditionModule: number, idTeacher: number){

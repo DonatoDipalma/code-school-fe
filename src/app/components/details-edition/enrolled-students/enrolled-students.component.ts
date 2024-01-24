@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from 'src/model/dtos/student';
-import { StudentsService } from 'src/services/students/students.service';
+import { ActivatedRoute, Router } from '@angular/router';
+ import { StudentsService } from 'src/services/students/students.service';
 
 @Component({
-  selector: 'app-enrolled-students-for-edition',
-  templateUrl: './enrolled-students-for-edition.component.html',
-  styleUrls: ['./enrolled-students-for-edition.component.css']
+  selector: 'app-enrolled-students',
+  templateUrl: './enrolled-students.component.html',
+  styleUrls: ['./enrolled-students.component.css']
 })
-export class EnrolledStudentsForEditionComponent {
+export class EnrolledStudentsComponent {
+
   editionId!: number;
   students: Student[] = [];
   constructor(private studentService : StudentsService,           
@@ -25,6 +26,5 @@ export class EnrolledStudentsForEditionComponent {
         error: err => console.error("Errore", err)
     });
 }
-  
 
 }

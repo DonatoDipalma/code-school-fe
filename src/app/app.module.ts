@@ -28,7 +28,9 @@ import { AddTeacherFormComponent } from './components/add-teacher-form/add-teach
 import { MaintenanceComponent } from './components/maintenance/maintenance.component';
 import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';
 import { DetailsCourseComponent } from './components/details-course/details-course.component';
-import { EnrolledStudentsForEditionComponent } from './components/enrolled-students-for-edition/enrolled-students-for-edition.component';
+import { TeachersListEditionDetailsComponent } from './components/details-edition/teachers-list-edition-details/teachers-list-edition-details.component';
+import { EnrolledStudentsComponent } from './components/details-edition/enrolled-students/enrolled-students.component';
+import { DetailsEditionCardComponent } from './components/details-edition/details-edition-card/details-edition-card.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { EnrolledStudentsForEditionComponent } from './components/enrolled-stude
     MaintenanceComponent,
     SuccessAddTeacherFormComponent,
     DetailsCourseComponent,
-    EnrolledStudentsForEditionComponent
+    TeachersListEditionDetailsComponent,
+    EnrolledStudentsComponent,
+    DetailsEditionCardComponent,
   ],
   imports: [
     BrowserModule,
