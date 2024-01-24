@@ -1,4 +1,5 @@
 export interface Teacher{
+teacherSummary: any;
     id: number,
     firstname: string,
     lastname: string,

@@ -17,7 +17,6 @@ export class DetailsEditionComponent implements OnInit {
   teachersEmpty = true;
   editionId!: number;
   students: Student[] = [];
-
   constructor(
     private route: ActivatedRoute,
     private teachersService: TeachersService,
@@ -53,8 +52,8 @@ export class DetailsEditionComponent implements OnInit {
     });
   }
 
-  deleteTeacher(idEditionModule: number, idTeacher: number){
-    this.editionService.deleteTeacherByTeacherIdAndEditionModuleId(idTeacher, idEditionModule).subscribe({
+  deleteTeacher(data : {moduleId : number, teacherId: number}){
+    this.editionService.deleteTeacherByTeacherIdAndEditionModuleId(data.teacherId, data.moduleId).subscribe({
       next:(em => {
         alert("Docenza annullata");
         this.loadEditionDetails();
