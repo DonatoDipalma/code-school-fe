@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EditionDetailsDto } from 'src/model/dtos/edition-details';
+import { Student } from 'src/model/dtos/student';
 import { EditionService } from 'src/services/edition/edition.service';
+import { StudentService } from 'src/services/student/student.service';
 import { TeachersService } from 'src/services/teachers/teachers.service';
 
 @Component({
@@ -14,11 +16,13 @@ export class DetailsEditionComponent implements OnInit {
   editionDetails!: EditionDetailsDto;
   teachersEmpty = true;
   editionId!: number;
+   student: Student[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private teachersService: TeachersService,
-    private editionService: EditionService
+    private editionService: EditionService,
+    private studentService: StudentService
   ) {}
 
   ngOnInit(): void {
@@ -50,4 +54,15 @@ export class DetailsEditionComponent implements OnInit {
       }
     });
   }
+
+  fetchAllStudents(){
+    this.studentService.fetchAllStudents().subscribe({
+      next: st => {
+        this.student = st;
+      },
+      error: (err) => {
+        console.error("Errore", err)}
+    });
+  }
+
 }  

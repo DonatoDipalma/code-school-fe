@@ -26,6 +26,7 @@ import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-m
 import { DetailsCourseComponent } from './components/details-course/details-course.component';
 import { AddTeacherFormComponent } from './components/add-teacher-form/add-teacher-form.component';
 import { TeachersListComponent } from './components/teachers-list/teachers-list.component';
+import { StudentListComponent } from './components/student-list/student-list.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TeachersListComponent } from './components/teachers-list/teachers-list.
     AssignTeacherToModuleComponent,
     DetailsCourseComponent,
     AddTeacherFormComponent,
-    TeachersListComponent
+    TeachersListComponent,
+    StudentListComponent
   ],
   imports: [
     BrowserModule,
