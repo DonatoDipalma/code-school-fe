@@ -46,21 +46,9 @@
     <a [routerLink]="['/editions']" class="btn btn-primary">Back</a>
   </div>
 </div>
-    <div *ngIf="teachersEmpty" class="card ml-auto custom-margin-bottom">   
-      <h1 class="card-header">TEACHERS</h1>
-      
-        <div class="row">
-          <div *ngFor="let t of editionDetails?.teachers" class="col-md-6 mb-4">
-            <br>
-            <h2>{{ t.teacherSummary.firstname }} {{ t.teacherSummary.lastname }}</h2>
-            <h4> Modulo: <br>{{t.moduleTitle}}</h4>
-            <div *ngIf="t.teacherSummary.id">
-              <img [src]="'/assets/img/teach_icons/' + t.teacherSummary.imgName" alt="">
-              <button class="btn btn-primary" (click)="deleteTeacher(t.moduleId,t.teacherSummary.id)"><i class="bi bi-trash"></i></button>
-            </div>
-            <div *ngIf="!t.teacherSummary.id">
-              <button class="btn btn-primary" [routerLink] = "['/editions', this.editionId, t.moduleId]"> Assegna teacher </button>
-            </div>
-        </div>
-      </div>
-    </div>
+<div *ngIf="teachersEmpty" class="card">
+  <h1 class="card-header">TEACHERS</h1>
+  <div class="card-container">
+    <app-teacher-module [teachers]="t" *ngFor="let t of editionDetails?.teachers" class="TEAC"></app-teacher-module>
+  </div>
+</div>

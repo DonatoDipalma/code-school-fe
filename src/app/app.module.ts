@@ -27,6 +27,7 @@ import { CourseDetailsComponent } from './components/courses/course-details/cour
 import { AddTeacherComponent } from './components/add-teacher/add-teacher.component';
 import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';
 import { TeacherRoomComponent } from './components/teacher-room/teacher-room.component';
+import { TeacherModuleComponent } from './components/teacher-module/teacher-module.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { TeacherRoomComponent } from './components/teacher-room/teacher-room.com
     CourseDetailsComponent,
     AddTeacherComponent,
     SuccessAddTeacherFormComponent,
-    TeacherRoomComponent
+    TeacherRoomComponent,
+    TeacherModuleComponent
   ],
   imports: [
     BrowserModule,

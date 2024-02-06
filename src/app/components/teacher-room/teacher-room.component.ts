@@ -14,7 +14,8 @@ import { Teacher } from 'src/model/dtos/teacher';
   teacherForm!: FormGroup;
   levels: String[] = ["Senior","Standard","Junior"];
   teachers: Teacher[] = [];
-  
+  allTeachers: Teacher[] = [];
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -25,17 +26,17 @@ import { Teacher } from 'src/model/dtos/teacher';
 
   ngOnInit(): void {
     this.getAllTeacher();
-    this.teacherForm = this.formBuilder.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      email: ['', Validators.required],
-      teacherLevel: ['', Validators.required]
-    });
 
+    this.teacherForm = this.formBuilder.group({
+      teacherLevel: [null]
+    });
   }
   getAllTeacher(){
     this.teacherService.getAllTeachers().subscribe({
-      next: ts => this.teachers = ts,
+      next: ts => {
+        this.teachers = ts;
+        this.allTeachers = ts;
+      },
       error: (error) =>  console.error('Errore nel recupero degli insegnanti:', error)
     });
   }
@@ -43,11 +44,19 @@ import { Teacher } from 'src/model/dtos/teacher';
 
   filterLevel(){
     const selectedLevel = this.teacherForm.get('teacherLevel')?.value;
-    this.teachers = this.teachers.filter(teacher => teacher.teacherLevel === selectedLevel);
-      
+    if(selectedLevel === "null"){
+      this.teachers = this.allTeachers;
+    } else {
+      this.teachers = this.allTeachers.filter(teacher => teacher.teacherLevel === selectedLevel);
+    }
   }
 
-  deleteTeacher(teacherId: number){}
+  deleteTeacher(teacherId: number){
+    this.teacherService.deleteTeacher(teacherId).subscribe({
+      next: () => this.getAllTeacher(),
+      error: (error) =>  console.error("Errore nell' eliminazione dell' insegnante:", error)
+    });
+  }
 }
   
 

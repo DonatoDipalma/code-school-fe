@@ -13,8 +13,9 @@ import { TeachersService } from 'src/services/teachers/teachers.service';
 export class DetailsEditionComponent implements OnInit {
 
   editionDetails!: EditionDetailsDto;
-  teachersEmpty = true;
   editionId!: number;
+
+  teachersEmpty = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -39,6 +40,7 @@ export class DetailsEditionComponent implements OnInit {
   });
   }
 
+
   deleteTeacher(idEditionModule: number, idTeacher: number){
     this.editionService.deleteTeacherByTeacherIdAndEditionModuleId(idTeacher, idEditionModule).subscribe({
       next:(em => {
@@ -51,4 +53,5 @@ export class DetailsEditionComponent implements OnInit {
       }
     });
   }
+
 }  

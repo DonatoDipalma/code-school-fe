@@ -46,4 +46,7 @@ export class TeachersService{
     getAllTeachers(): Observable<Teacher[]> {
         return this.http.get<Teacher[]>(`${this.TEACHER_URL}/`);
     }
+    deleteTeacher(teacherId: number): Observable<void>{
+        return this.http.delete<void>(`${this.TEACHER_URL}/${teacherId}`);
+    }
 }
