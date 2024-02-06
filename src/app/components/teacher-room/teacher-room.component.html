@@ -1,0 +1,54 @@
+
+  
+  <h1 class="hover-effect">Tutti gli insegnanti:</h1>
+  <div id="form-container">
+    <form [formGroup]="teacherForm">
+      <select title="seleziona un livello" formControlName="teacherLevel" id="area" class="form-select" (change)="filterLevel()">
+        <option [value]="null" selected>Tutti gli insegnanti</option>
+        <option *ngFor="let l of levels" [value]="l">{{l}}</option>
+      </select>    
+    </form>
+  </div>
+  <a class="btn btn-primary-create hover-effect" routerLink="/add-teacher-form" routerLinkActive="active">Crea nuovo insegnante</a>
+  <div class="container1" style="margin-top: 15px;">
+    <div class="row">
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/3159/3159407.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/3771/3771395.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/2620/2620490.png" alt="" class="hover-effect">
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="card" style="width: 15rem;" *ngFor="let teacher of teachers">
+      <img class="card-img-top" src="/assets/img/teach_icons/albus.webp" [src]= "'/assets/img/teach_icons/' + teacher?.imgName" alt="">
+      <div class="card-body">
+        <h5 class="card-title">{{teacher.firstname}}</h5>
+        <h5 class="card-title">{{teacher?.lastname}}</h5><br>
+        <h5 class="bi bi-person">{{teacher?.teacherLevel}}<br></h5>
+        
+        <p></p>
+        <button class="btn btn-primary" (click)="deleteTeacher(teacher.id)"><i class="bi bi-trash"></i></button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container1" style="margin-top: 15px;">
+    <div class="row">
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/1296/1296693.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/3159/3159172.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/9727/9727439.png" alt="" class="hover-effect">
+      </div>
+    </div>
+</div>
+  

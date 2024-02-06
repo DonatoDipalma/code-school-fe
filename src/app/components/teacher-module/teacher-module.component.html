@@ -1,0 +1,11 @@
+<br>
+<h2>{{ teachers.teacherSummary.firstname }} {{ teachers.teacherSummary.lastname }}</h2>
+<h4> Modulo: <br>{{teachers.moduleTitle}}</h4>
+<div *ngIf="teachers.teacherSummary.id">
+    <img [src]="'/assets/img/teach_icons/' + teachers.teacherSummary.imgName" alt="">
+    <br>
+    <button class="btn btn-primary" (click)="deleteTeacher(teachers.moduleId,teachers.teacherSummary.id)"><i class="bi bi-trash"></i></button>
+</div>
+<div *ngIf="!teachers.teacherSummary.id">
+    <!--<button class="btn btn-primary" [routerLink] = "['/editions', this.editionId, t.moduleId]"> Assegna teacher </button>-->
+</div>

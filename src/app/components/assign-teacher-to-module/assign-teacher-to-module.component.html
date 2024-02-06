@@ -1,0 +1,70 @@
+<div class="container">
+    <img src="" alt="">
+    <h2 class="hover-effect">Assegna un teacher al modulo {{moduleName}}</h2>
+    <div class="row">
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/6822/6822288.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/9874/9874671.png" alt="" class="hover-effect">
+      </div>
+      <div class="col-sm">
+        <img src="https://cdn-icons-png.flaticon.com/256/1945/1945655.png" alt="" class="hover-effect">
+      </div>
+    </div>
+</div>
+  
+  <form class="row g-3" (ngSubmit)="searchTeacher()" [formGroup]="searchTeacherForm">
+    <div class = "select-container">
+      <div class="col-md-2">
+        <label for="area" class="form-label">Area di competenza</label>
+        <select (change)="fetchSkills($event)" class="form-select" id="area" formControlName="areaId">
+            <option value="-1">Seleziona un area</option>
+            <option *ngFor="let area of areas" [value]="area.id">{{ area.name }}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="skill" class="form-label">Nome skill</label>
+        <select class="form-select" id="skill" formControlName="skillId">
+            <option value="-1">Seleziona una skill</option>
+            <option *ngFor="let s of skills" [value]="s.id">{{ s.name }}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="level" class="form-label">Livello competenza</label>
+        <select class="form-select" id="level" formControlName="levelId">
+            <option value="-1">Seleziona un livello</option>
+            <option *ngFor="let l of levels" [value]="l">{{ l }}</option>
+        </select>
+      </div>
+      <div class="search-button col-md-2">
+        <button [disabled]="searchTeacherForm.get('skillId')?.value == -1 || searchTeacherForm.get('levelId')?.value == -1" class="btn btn-primary hover-effect">Cerca</button>
+      </div>
+    </div>
+</form>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let t of teachers" class="col-sm-4">
+      <h2>ID Teacher : #{{t.id}}</h2>
+      <p>{{t.fullName}}</p>
+      <p>{{t.skillName}}</p>
+      <p>{{t.skillLevel}}</p>
+      <p *ngIf="!t.hoursRate">Dipendente</p>
+      <p *ngIf="t.hoursRate">Consulente con costo orario: {{t.hoursRate}}</p>
+      <button (click)="assignTeacher(t.id)" class="btn btn-primary hover-effect">Assegna</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/1640/1640642.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/256/5390/5390225.png" alt="" class="hover-effect">
+    </div>
+    <div class="col-sm">
+      <img src="https://cdn-icons-png.flaticon.com/512/6551/6551750.png" alt="" class="hover-effect">
+    </div>
+  </div>
+</div>

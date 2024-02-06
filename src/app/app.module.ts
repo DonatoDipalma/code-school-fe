@@ -17,7 +17,17 @@ import { LoginComponent } from './components/login/login.component';
 import { AddCourseFormComponent } from './components/add-course-form/add-course-form.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SuccessAddCourseFormComponent } from './components/success-add-course-form/success-add-course-form.component';
-import { UpcomingEditionComponent } from './components/upcoming-editions/upcoming-edition/upcoming-edition.component';
+import { DetailsEditionComponent } from './components/details-edition/details-edition.component';
+import { AddEditionFormComponent } from './components/add-edition-form/add-edition-form.component';
+import { SuccessAddEditionFormComponent } from './components/success-add-edition-form/success-add-edition-form.component';
+import { EditionsComponent } from './components/editions/editions.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
+import { CourseDetailsComponent } from './components/courses/course-details/course-details.component';
+import { AddTeacherComponent } from './components/add-teacher/add-teacher.component';
+import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';
+import { TeacherRoomComponent } from './components/teacher-room/teacher-room.component';
+import { TeacherModuleComponent } from './components/teacher-module/teacher-module.component';import { UpcomingEditionComponent } from './components/upcoming-editions/upcoming-edition/upcoming-edition.component';
 
 
 @NgModule({
@@ -34,7 +44,18 @@ import { UpcomingEditionComponent } from './components/upcoming-editions/upcomin
     AddCourseFormComponent,
     MenuComponent,
     SuccessAddCourseFormComponent,
-    UpcomingEditionComponent
+    UpcomingEditionComponent,
+    DetailsEditionComponent,
+    AddEditionFormComponent,
+    SuccessAddEditionFormComponent,
+    EditionsComponent,
+    SigninComponent,
+    AssignTeacherToModuleComponent,
+    CourseDetailsComponent,
+    AddTeacherComponent,
+    SuccessAddTeacherFormComponent,
+    TeacherRoomComponent,
+    TeacherModuleComponent
   ],
   imports: [
     BrowserModule,

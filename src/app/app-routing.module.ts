@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -9,16 +9,36 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddCourseFormComponent } from './components/add-course-form/add-course-form.component';
 import { SuccessAddCourseFormComponent } from './components/success-add-course-form/success-add-course-form.component';
+import { DetailsEditionComponent } from './components/details-edition/details-edition.component';
+import { AddEditionFormComponent } from './components/add-edition-form/add-edition-form.component';
+import { SuccessAddEditionFormComponent } from './components/success-add-edition-form/success-add-edition-form.component';
+import { EditionsComponent } from './components/editions/editions.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { AssignTeacherToModuleComponent } from './components/assign-teacher-to-module/assign-teacher-to-module.component';
+import { CourseDetailsComponent } from './components/courses/course-details/course-details.component';
+import { AddTeacherComponent } from './components/add-teacher/add-teacher.component';
+import { SuccessAddTeacherFormComponent } from './components/success-add-teacher-form/success-add-teacher-form.component';
+import { TeacherRoomComponent } from './components/teacher-room/teacher-room.component';
 import { UpcomingEditionComponent } from './components/upcoming-editions/upcoming-edition/upcoming-edition.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'courses', component: CoursesComponent },
-  { path: 'editions', component: UpcomingEditionsComponent },
+  { path: 'editions', component: EditionsComponent },
+  { path: 'editions/:editionId', component: DetailsEditionComponent },
+  { path: 'upcomingEditions', component: UpcomingEditionsComponent },
+  { path: 'add-edition-form', component: AddEditionFormComponent },
+  { path: 'success-add-edition-form', component: SuccessAddEditionFormComponent},
   { path: 'edition', component: UpcomingEditionComponent},
   { path: 'about', component: AboutUsComponent },
+  { path: 'sign-in', component: SigninComponent},
   { path: 'login', component: LoginComponent },
   { path: 'add-course-form', component: AddCourseFormComponent},
-  { path: 'success-add-course-form', component: SuccessAddCourseFormComponent }
+  { path: 'success-add-course-form', component: SuccessAddCourseFormComponent },
+  { path: 'editions/:editionId/:moduleId', component: AssignTeacherToModuleComponent },
+  { path: 'courses/:courseId', component: CourseDetailsComponent},
+  { path: 'success-add-teacher-form', component: SuccessAddTeacherFormComponent},
+  { path: 'add-teacher-form', component: AddTeacherComponent},
+  { path: 'teacher-room', component: TeacherRoomComponent}
 ];
 
 @NgModule({
